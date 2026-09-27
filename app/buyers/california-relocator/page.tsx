@@ -17,9 +17,10 @@ import {
   TrendingUp,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { withPageCanonical } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Relocating from California to Las Vegas | Berkshire Hathaway HomeServices",
+export const metadata: Metadata = withPageCanonical("/buyers/california-relocator", {
+  title: "Relocating from California to Las Vegas",
   description:
     "Moving from California to Las Vegas? Zero state income tax, 40-60% lower home prices, same sunshine. Dr. Jan Duffy helps CA relocators find their perfect Las Vegas home. Call (702) 222-1964.",
   keywords: [
@@ -28,9 +29,9 @@ export const metadata: Metadata = {
     "California relocator Las Vegas",
     "no state income tax Nevada",
     "Las Vegas homes California buyers",
-    "Berkshire Hathaway HomeServices relocation",
+    "relocation",
   ],
-};
+});
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -82,8 +83,8 @@ const faqSchema = {
 const realEstateAgentSchema = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
-  name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-  telephone: "+17025001942",
+  name: "Dr. Jan Duffy - Nevada Properties",
+  telephone: "+17022221964",
   url: "https://heyberkshire.com/buyers/california-relocator",
   address: {
     "@type": "PostalAddress",
@@ -454,7 +455,7 @@ export default function CaliforniaRelocatorPage() {
                 out alone."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, Nevada Properties
               </cite>
             </div>
           </section>
@@ -484,7 +485,7 @@ export default function CaliforniaRelocatorPage() {
               </Link>
             </div>
             <p className="mt-6 text-blue-200 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Nevada Properties
             </p>
           </section>
         </div>

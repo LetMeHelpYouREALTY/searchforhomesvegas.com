@@ -256,9 +256,9 @@ export class FollowUpBossClient {
     const headers: HeadersInit = {
       'Content-Type': 'application/json',
       'Authorization': `Basic ${Buffer.from(`${this.config.apiKey}:`).toString('base64')}`,
+      'X-System': 'DrJanDuffyWebsite',
     };
 
-    // Add system key for higher rate limits
     if (this.config.systemKey) {
       headers['X-System-Key'] = this.config.systemKey;
     }

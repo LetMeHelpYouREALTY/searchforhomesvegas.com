@@ -14,26 +14,27 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { withPageCanonical } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Las Vegas Market Update | January 2026",
+export const metadata: Metadata = withPageCanonical("/market-update", {
+  title: "Las Vegas Market Update | January 2026",
   description:
-    "Weekly Las Vegas real estate market update from Berkshire Hathaway HomeServices Nevada Properties. Get the latest stats, notable sales, and expert analysis from Dr. Jan Duffy. Call (702) 222-1964.",
+    "Weekly Las Vegas real estate market update from Nevada Properties. Get the latest stats, notable sales, and expert analysis from Dr. Jan Duffy. Call (702) 222-1964.",
   keywords: [
-    "Berkshire Hathaway HomeServices Las Vegas market update",
+    "Las Vegas market update",
     "Las Vegas real estate market",
     "Las Vegas housing market 2026",
     "Henderson real estate market",
     "Las Vegas home prices",
   ],
-};
+});
 
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "NewsArticle",
   headline: "Las Vegas Real Estate Market Update - Week of January 20, 2026",
   description:
-    "Weekly market analysis from Berkshire Hathaway HomeServices Nevada Properties covering Las Vegas Valley real estate trends, statistics, and expert insights.",
+    "Weekly market analysis from Nevada Properties covering Las Vegas Valley real estate trends, statistics, and expert insights.",
   datePublished: "2026-01-20",
   dateModified: "2026-01-24",
   author: {
@@ -42,12 +43,12 @@ const articleSchema = {
     jobTitle: "REALTOR®",
     worksFor: {
       "@type": "RealEstateAgent",
-      name: "Berkshire Hathaway HomeServices Nevada Properties",
+      name: "Nevada Properties",
     },
   },
   publisher: {
     "@type": "Organization",
-    name: "Berkshire Hathaway HomeServices Nevada Properties",
+    name: "Nevada Properties",
     url: "https://heyberkshire.com",
   },
 };
@@ -80,14 +81,14 @@ export default function MarketUpdatePage() {
               Week of January 20, 2026
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-              Berkshire Hathaway HomeServices Las Vegas Market Update
+              Las Vegas Market Update
             </h1>
             <p className="text-xl text-slate-600">
               Your weekly insider report on Las Vegas Valley real estate from{" "}
-              <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>
+              <strong>Nevada Properties</strong>
             </p>
             <div className="flex items-center justify-center mt-6 text-slate-500 text-sm">
-              <span>By Dr. Jan Duffy, REALTOR® | BHHS Nevada Properties</span>
+              <span>By Dr. Jan Duffy, REALTOR®</span>
             </div>
           </div>
 
@@ -225,7 +226,7 @@ export default function MarketUpdatePage() {
                 <div>
                   <div className="font-bold text-slate-900">Dr. Jan Duffy</div>
                   <div className="text-slate-500 text-sm">
-                    REALTOR® | Berkshire Hathaway HomeServices Nevada Properties
+                    REALTOR® Nevada Properties
                   </div>
                 </div>
               </div>
@@ -271,7 +272,7 @@ export default function MarketUpdatePage() {
                   <li className="flex items-start">
                     <ArrowRight className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span>
-                      <strong>Work with an expert.</strong> A Berkshire Hathaway HomeServices agent
+                      <strong>Work with an expert.</strong> A agent
                       can identify properties before they hit the market and negotiate effectively.
                     </span>
                   </li>
@@ -311,7 +312,7 @@ export default function MarketUpdatePage() {
                   <li className="flex items-start">
                     <ArrowRight className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span>
-                      <strong>Leverage the BHHS brand.</strong> Berkshire Hathaway HomeServices
+                      <strong>Leverage the brand.</strong> Berkshire Hathaway HomeServices
                       marketing reaches qualified buyers locally, nationally, and internationally.
                     </span>
                   </li>
@@ -400,7 +401,7 @@ export default function MarketUpdatePage() {
               </Link>
             </div>
             <p className="mt-6 text-blue-200 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Nevada Properties
             </p>
           </section>
 

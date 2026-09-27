@@ -11,6 +11,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { FollowUpBossClient } from '@/lib/fub/client';
+import { getFubApiKey, getFubSystemKey, getSiteLeadSource } from '@/lib/fub/env';
 import { leadFormLimiter, getClientId, checkRateLimit, getRateLimitHeaders } from '@/lib/rate-limit';
 
 export interface LeadCaptureRequest {
@@ -77,7 +78,20 @@ async function verifyTurnstileToken(token: string): Promise<boolean> {
 
 export async function POST(request: NextRequest) {
   try {
-    const data: LeadCaptureRequest = await request.json();
+    let data: LeadCaptureRequest;
+    try {
+      data = await request.json();
+    } catch {
+      return NextResponse.json({ error: 'Invalid request body' }, { status: 400 });
+    }
+
+    const honeypot =
+      (data as LeadCaptureRequest & { honeypot?: string; website?: string }).honeypot ||
+      (data as LeadCaptureRequest & { website?: string }).website ||
+      data.customFields?.honeypot;
+    if (honeypot) {
+      return NextResponse.json({ error: 'Invalid submission' }, { status: 400 });
+    }
 
     // Check rate limit (5 submissions per hour per IP)
     const clientId = getClientId(request);
@@ -132,10 +146,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Initialize FUB client
+    const apiKey = getFubApiKey();
+    if (!apiKey) {
+      console.error('[Lead Capture] Missing FOLLOW_UP_BOSS_API_KEY / FUB_API_KEY');
+      return NextResponse.json({ error: 'Lead capture is temporarily unavailable' }, { status: 500 });
+    }
+
     const fub = new FollowUpBossClient({
-      apiKey: process.env.FUB_API_KEY || '',
-      systemKey: process.env.FUB_SYSTEM_KEY,
+      apiKey,
+      systemKey: getFubSystemKey(),
     });
 
     // Check for existing lead (deduplication)
@@ -151,7 +170,7 @@ export async function POST(request: NextRequest) {
       name: data.name || `${data.firstName || ''} ${data.lastName || ''}`.trim(),
       emails: data.email ? [{ value: data.email }] : undefined,
       phones: data.phone ? [{ value: data.phone }] : undefined,
-      source: enrichSource(data.source, request),
+      source: getSiteLeadSource(),
       stage: data.stage || 'New Lead',
       customFields: {
         ...data.customFields,
@@ -191,7 +210,7 @@ export async function POST(request: NextRequest) {
     // Create initial event with message
     if (data.message) {
       await fub.createEvent({
-        source: 'website',
+        source: getSiteLeadSource(),
         type: 'Inbound Lead',
         message: `Lead message: ${data.message}`,
         personId: person.id,
@@ -206,7 +225,7 @@ export async function POST(request: NextRequest) {
     const searchCriteria = buildSearchCriteria(data);
     if (searchCriteria) {
       await fub.createEvent({
-        source: 'website',
+        source: getSiteLeadSource(),
         type: 'Property Search',
         message: `Search criteria:\n${searchCriteria}`,
         personId: person.id,
@@ -238,44 +257,10 @@ export async function POST(request: NextRequest) {
     console.error('[Lead Capture] Error:', error);
     
     return NextResponse.json(
-      { 
-        error: 'Failed to capture lead',
-        details: error instanceof Error ? error.message : 'Unknown error',
-      },
+      { error: 'Failed to capture lead' },
       { status: 500 }
     );
   }
-}
-
-/**
- * Enrich source with UTM parameters and referrer
- */
-function enrichSource(source: string | undefined, request: NextRequest): string {
-  const url = new URL(request.url);
-  
-  // Check UTM parameters
-  const utmSource = url.searchParams.get('utm_source');
-  const utmMedium = url.searchParams.get('utm_medium');
-  const utmCampaign = url.searchParams.get('utm_campaign');
-
-  if (utmSource) {
-    return `${utmSource}${utmMedium ? `/${utmMedium}` : ''}${utmCampaign ? `/${utmCampaign}` : ''}`;
-  }
-
-  // Check referrer
-  const referrer = request.headers.get('referer');
-  if (referrer) {
-    try {
-      const refUrl = new URL(referrer);
-      if (!refUrl.hostname.includes('searchforhomesvegas.com')) {
-        return `referral/${refUrl.hostname}`;
-      }
-    } catch (e) {
-      // Invalid URL
-    }
-  }
-
-  return source || 'website/direct';
 }
 
 /**

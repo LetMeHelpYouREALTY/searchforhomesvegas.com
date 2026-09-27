@@ -17,20 +17,21 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { withPageCanonical } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "About Dr. Jan Duffy | Berkshire Hathaway HomeServices Las Vegas",
+export const metadata: Metadata = withPageCanonical("/about", {
+  title: "About Dr. Jan Duffy Las Vegas",
   description:
-    "Meet Dr. Jan Duffy, your trusted Berkshire Hathaway HomeServices Nevada Properties agent. Serving Las Vegas since 2008, $127M+ in transactions, Henderson & Summerlin specialist. Call (702) 222-1964.",
+    "Meet Dr. Jan Duffy, Las Vegas REALTOR®. Serving the valley since 2008, $127M+ in transactions, Henderson and Summerlin specialist. Call (702) 222-1964.",
   keywords: [
     "Dr. Jan Duffy",
-    "Berkshire Hathaway HomeServices agent",
+    "agent",
     "Las Vegas realtor",
-    "BHHS Nevada Properties",
+    "Nevada Properties",
     "Henderson real estate agent",
     "Summerlin realtor",
   ],
-};
+});
 
 // Person Schema for Dr. Jan Duffy
 const personSchema = {
@@ -39,13 +40,13 @@ const personSchema = {
   name: "Dr. Jan Duffy",
   jobTitle: "REALTOR®",
   description:
-    "Licensed real estate agent with Berkshire Hathaway HomeServices Nevada Properties, serving Las Vegas, Henderson, and Summerlin since 2008.",
-  telephone: "+17025001942",
+    "Licensed real estate agent with Nevada Properties, serving Las Vegas, Henderson, and Summerlin since 2008.",
+  telephone: "+17022221964",
   email: "homes@heyberkshire.com",
-  url: "https://heyberkshire.com/about",
+  url: "https://searchforhomesvegas.com/about",
   worksFor: {
     "@type": "RealEstateAgent",
-    name: "Berkshire Hathaway HomeServices Nevada Properties",
+    name: "Nevada Properties",
     address: {
       "@type": "PostalAddress",
       streetAddress: "9406 W Lake Mead Blvd, Suite 100",
@@ -125,10 +126,10 @@ export default function AboutPage() {
           {/* Hero Section */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Nevada Properties
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Meet Your Berkshire Hathaway HomeServices Agent
+              About Dr. Jan Duffy
             </h1>
             <p className="text-xl text-slate-600">
               Dr. Jan Duffy has been serving Las Vegas since 2008—backed by the most
@@ -161,7 +162,7 @@ export default function AboutPage() {
                     relocations—particularly for California families seeking Nevada's tax advantages.
                   </p>
                   <p>
-                    What sets <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>{" "}
+                    What sets <strong>Nevada Properties</strong>{" "}
                     apart? We're backed by Warren Buffett's Berkshire Hathaway Inc.—a name synonymous
                     with financial strength and ethical standards. When you're making the biggest
                     financial decision of your life, that trust matters. You deserve an agent who 
@@ -216,7 +217,7 @@ export default function AboutPage() {
                   the transaction. I treat every client like family and won't stop until we achieve 
                   your real estate goals."
                   <cite className="block mt-2 text-slate-900 font-semibold not-italic">
-                    — Dr. Jan Duffy, BHHS Nevada Properties
+                    — Dr. Jan Duffy, Nevada Properties
                   </cite>
                 </blockquote>
               </div>
@@ -228,7 +229,7 @@ export default function AboutPage() {
                   <div className="text-center">
                     <div className="text-6xl mb-4">👩‍💼</div>
                     <p className="text-slate-600 font-semibold">Dr. Jan Duffy</p>
-                    <p className="text-sm text-slate-500">BHHS Nevada Properties</p>
+                    <p className="text-sm text-slate-500">Nevada Properties</p>
                   </div>
                 </div>
 
@@ -301,13 +302,13 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* Why BHHS Section */}
+          {/* Why Section */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
               Why Berkshire Hathaway HomeServices?
             </h2>
             <p className="text-slate-300 text-center max-w-3xl mx-auto mb-8">
-              Berkshire Hathaway HomeServices is the only real estate brand backed by Warren 
+              is the only real estate brand backed by Warren 
               Buffett's Berkshire Hathaway Inc. This means unmatched financial stability, 
               ethical standards, and a commitment to client service that defines every transaction.
             </p>
@@ -356,7 +357,7 @@ export default function AboutPage() {
           {/* Areas Served */}
           <section className="mb-16 max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
-              Areas Served by BHHS Nevada Properties
+              Areas Served by Nevada Properties
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Dr. Jan Duffy serves the entire Las Vegas Valley with specialized knowledge of each 
@@ -449,7 +450,7 @@ export default function AboutPage() {
               </Link>
             </div>
             <p className="mt-4 text-blue-200 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Nevada Properties
             </p>
           </section>
         </div>

@@ -18,11 +18,12 @@ import {
   Users,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { withPageCanonical } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Las Vegas Luxury Homes for Sale | Berkshire Hathaway HomeServices",
+export const metadata: Metadata = withPageCanonical("/luxury-homes", {
+  title: "Las Vegas Luxury Homes for Sale",
   description:
-    "Discover Las Vegas luxury real estate with Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. The Ridges, MacDonald Highlands, Summerlin, Southern Highlands. $1M+ homes. Call (702) 222-1964.",
+    "Discover Las Vegas luxury real estate with Dr. Jan Duffy at Nevada Properties. The Ridges, MacDonald Highlands, Summerlin, Southern Highlands. $1M+ homes. Call (702) 222-1964.",
   keywords: [
     "Las Vegas luxury homes",
     "The Ridges Las Vegas",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     "MacDonald Highlands Henderson",
     "luxury real estate agent Las Vegas",
   ],
-};
+});
 
 const luxurySchema = {
   "@context": "https://schema.org",
@@ -41,8 +42,8 @@ const luxurySchema = {
   name: "Las Vegas Luxury Home Services",
   provider: {
     "@type": "RealEstateAgent",
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    telephone: "+17025001942",
+    name: "Dr. Jan Duffy - Nevada Properties",
+    telephone: "+17022221964",
   },
   areaServed: "Las Vegas, Henderson, Summerlin luxury communities",
   serviceType: "Luxury Real Estate",
@@ -126,7 +127,7 @@ export default function LuxuryHomesPage() {
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Nevada Properties
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Las Vegas Luxury Real Estate
@@ -174,14 +175,14 @@ export default function LuxuryHomesPage() {
             </div>
           </section>
 
-          {/* Why BHHS for Luxury */}
+          {/* Why for Luxury */}
           <section className="mb-16 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               Why Choose Berkshire Hathaway for Luxury Real Estate
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               In luxury real estate, the agent you choose can impact both the sale price and 
-              the transaction experience. Berkshire Hathaway HomeServices agents bring resources, 
+              the transaction experience. agents bring resources, 
               reputation, and expertise that make a measurable difference in this competitive segment.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -230,13 +231,13 @@ export default function LuxuryHomesPage() {
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Luxury buyers expect discretion, market expertise, and flawless execution. In this
                 price range, one wrong move can cost hundreds of thousands of dollars. That's why
-                the Berkshire Hathaway HomeServices name matters—it tells buyers and sellers alike
+                the name matters—it tells buyers and sellers alike
                 that they're working with the best. I've helped clients purchase and sell homes from 
                 $1 million to over $10 million, and every transaction receives my full attention 
                 and the complete resources of BHHS."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, BHHS Nevada Properties | Serving Las Vegas Since 2008
+                — Dr. Jan Duffy, Nevada Properties | Serving Las Vegas Since 2008
               </cite>
             </div>
           </section>
@@ -442,7 +443,7 @@ export default function LuxuryHomesPage() {
               </Link>
             </div>
             <p className="mt-4 text-slate-400 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Nevada Properties
             </p>
           </section>
         </div>

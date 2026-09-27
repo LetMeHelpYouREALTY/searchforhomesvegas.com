@@ -1,13 +1,14 @@
+import { withPageCanonical } from "@/lib/metadata";
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageCanonical("/security-policy", {
   title: 'Security Policy',
   description: 'Security policy and responsible disclosure information for heyberkshire.com',
   robots: {
     index: true,
     follow: true,
   },
-}
+});
 
 export default function SecurityPolicyPage() {
   return (
@@ -24,7 +25,7 @@ export default function SecurityPolicyPage() {
               Our Commitment to Security
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              At Berkshire Hathaway HomeServices Nevada Properties, we take the security
+              At Nevada Properties, we take the security
               of our systems and the privacy of our clients seriously. This page outlines
               our security practices and provides information for security researchers.
             </p>
@@ -242,7 +243,7 @@ export default function SecurityPolicyPage() {
                 <strong>Dr. Jan Duffy</strong>
               </p>
               <p className="mb-2">
-                Berkshire Hathaway HomeServices Nevada Properties
+                Nevada Properties
               </p>
               <p className="mb-2">
                 Email:{' '}

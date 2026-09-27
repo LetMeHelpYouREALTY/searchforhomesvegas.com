@@ -4,11 +4,20 @@ import Image from "next/image";
 import { Bed, Bath, Square, MapPin, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
+import { withPageCanonical } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Property Details | Las Vegas & Henderson Real Estate",
-  description: "View detailed information about this property listing in Las Vegas or Henderson, NV.",
+type ListingPageProps = {
+  params: Promise<{ id: string }>;
 };
+
+export async function generateMetadata({ params }: ListingPageProps): Promise<Metadata> {
+  const { id } = await params;
+  return withPageCanonical(`/listings/${id}`, {
+    title: `Las Vegas Property ${id} | Listing Details`,
+    description:
+      "View property details for this Las Vegas area listing. Contact Dr. Jan Duffy at (702) 222-1964 for a private showing.",
+  });
+}
 
 // This would typically fetch from RealScout API
 async function getProperty(id: string) {
@@ -132,7 +141,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
                 <h3 className="text-xl font-bold text-slate-900 mb-4">Contact Agent</h3>
                 <p className="text-slate-600 mb-4">Dr. Jan Duffy</p>
                 <p className="text-sm text-slate-600 mb-6">
-                  Berkshire Hathaway HomeServices Nevada Properties
+                  Nevada Properties
                 </p>
                 <div className="space-y-3">
                   <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">

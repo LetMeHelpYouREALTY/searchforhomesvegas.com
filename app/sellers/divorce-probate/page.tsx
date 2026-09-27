@@ -14,9 +14,10 @@ import {
   Users,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { withPageCanonical } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Divorce & Probate Home Sales Las Vegas | Berkshire Hathaway HomeServices",
+export const metadata: Metadata = withPageCanonical("/sellers/divorce-probate", {
+  title: "Divorce & Probate Home Sales Las Vegas",
   description:
     "Sensitive real estate situations handled with discretion. Dr. Jan Duffy helps with divorce sales, probate, estate liquidation, and court-ordered sales. Call (702) 222-1964.",
   keywords: [
@@ -24,9 +25,9 @@ export const metadata: Metadata = {
     "probate real estate Las Vegas",
     "estate sale Las Vegas",
     "court ordered sale Nevada",
-    "Berkshire Hathaway HomeServices divorce",
+    "divorce",
   ],
-};
+});
 
 export default function DivorceProbatePage() {
   return (
@@ -445,10 +446,10 @@ export default function DivorceProbatePage() {
             </div>
           </section>
 
-          {/* Why BHHS Matters */}
+          {/* Why Matters */}
           <section className="mb-16 max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Why Berkshire Hathaway HomeServices for Sensitive Sales
+              Why for Sensitive Sales
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6 text-center">
@@ -464,7 +465,7 @@ export default function DivorceProbatePage() {
                 <Scale className="h-10 w-10 text-blue-600 mx-auto mb-4" />
                 <h3 className="font-bold text-slate-900 mb-2">Professional Standards</h3>
                 <p className="text-slate-600 text-sm">
-                  BHHS agents follow strict ethical guidelines and documentation standards. This
+                  agents follow strict ethical guidelines and documentation standards. This
                   protects all parties and provides a defensible paper trail for legal proceedings.
                 </p>
               </div>
@@ -492,7 +493,7 @@ export default function DivorceProbatePage() {
                 peace of mind come first."
               </blockquote>
               <cite className="text-slate-300 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, Nevada Properties
               </cite>
             </div>
           </section>

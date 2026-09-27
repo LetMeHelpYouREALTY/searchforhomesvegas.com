@@ -15,11 +15,12 @@ import {
   CheckCircle,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { withPageCanonical } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Sun City Summerlin Homes for Sale | Berkshire Hathaway HomeServices",
+export const metadata: Metadata = withPageCanonical("/55-plus-communities/sun-city-summerlin", {
+  title: "Sun City Summerlin Homes for Sale",
   description:
-    "Nevada's largest 55+ community. Sun City Summerlin homes from $320K-$850K. 3 golf courses, 4 rec centers, 100+ clubs. Dr. Jan Duffy, BHHS specialist. Call (702) 222-1964.",
+    "Nevada's largest 55+ community. Sun City Summerlin homes from $320K-$850K. 3 golf courses, 4 rec centers, 100+ clubs. Dr. Jan Duffy, specialist. Call (702) 222-1964.",
   keywords: [
     "Sun City Summerlin homes for sale",
     "Sun City Summerlin Las Vegas",
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     "retirement community Las Vegas",
     "Berkshire Hathaway Sun City",
   ],
-};
+});
 
 const communitySchema = {
   "@context": "https://schema.org",
@@ -127,7 +128,7 @@ export default function SunCitySummerlinPage() {
                 woodworking, and ballroom dancing.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> has helped
+                <strong>Nevada Properties</strong> has helped
                 hundreds of buyers find their Sun City Summerlin home. Dr. Jan Duffy understands
                 the community's various neighborhoods, floor plans, and which areas offer the best
                 value or views.
@@ -277,7 +278,7 @@ export default function SunCitySummerlinPage() {
                 golf course views, mountain views, or proximity to their favorite rec center."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, Nevada Properties
               </cite>
             </div>
           </section>

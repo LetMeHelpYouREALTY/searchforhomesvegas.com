@@ -14,9 +14,10 @@ import {
   Sun,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { withPageCanonical } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Downsizing in Las Vegas | Berkshire Hathaway HomeServices",
+export const metadata: Metadata = withPageCanonical("/sellers/downsizing", {
+  title: "Downsizing in Las Vegas",
   description:
     "Ready to simplify? Dr. Jan Duffy helps Las Vegas homeowners extract equity and transition to low-maintenance living. 55+ communities, condos, and more. Call (702) 222-1964.",
   keywords: [
@@ -24,9 +25,9 @@ export const metadata: Metadata = {
     "sell large home Las Vegas",
     "55 plus communities Las Vegas",
     "empty nester Las Vegas",
-    "Berkshire Hathaway HomeServices downsizing",
+    "downsizing",
   ],
-};
+});
 
 export default function DownsizingPage() {
   return (
@@ -437,7 +438,7 @@ export default function DownsizingPage() {
                 I have the experience and compassion this transition requires."
               </blockquote>
               <cite className="text-slate-300 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, Nevada Properties
               </cite>
             </div>
           </section>

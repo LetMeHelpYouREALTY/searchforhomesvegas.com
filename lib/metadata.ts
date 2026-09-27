@@ -30,6 +30,22 @@ export function buildPageMetadata({
   };
 }
 
+/** Merge self-referencing canonical + og:url into existing page metadata. */
+export function withPageCanonical(pathname: string, metadata: Metadata): Metadata {
+  const canonical = absoluteUrl(pathname);
+  const og = metadata.openGraph;
+  const ogRecord =
+    og && typeof og === "object" && !Array.isArray(og)
+      ? { ...og, url: canonical }
+      : { url: canonical };
+
+  return {
+    ...metadata,
+    alternates: { ...metadata.alternates, canonical },
+    openGraph: ogRecord,
+  };
+}
+
 export function rootLayoutMetadata(pathname: string): Metadata {
   const canonical = absoluteUrl(pathname);
   const isHome = pathname === "/" || pathname === "";
