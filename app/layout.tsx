@@ -2,23 +2,14 @@ import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { headers } from "next/headers";
-import { getDomainConfig } from "@/lib/domain-config";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
+import GlobalHeroBanner from "@/components/layout/GlobalHeroBanner";
+import { rootLayoutMetadata } from "@/lib/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const domain = headers().get("x-domain") || "";
-  const config = getDomainConfig(domain);
-  return {
-    title: `${config.neighborhood} | Dr. Jan Duffy, REALTOR® | BHHS Nevada`,
-    description: config.description,
-    keywords: config.keywords,
-    openGraph: {
-      title: config.heroHeadline,
-      description: config.description,
-      type: "website",
-    },
-  };
+  const pathname = headers().get("x-pathname") || "/";
+  return rootLayoutMetadata(pathname);
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -37,6 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}</Script>
       </head>
       <body>
+        <GlobalHeroBanner />
         {children}
         <Analytics />
       </body>
