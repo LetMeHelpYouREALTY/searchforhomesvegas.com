@@ -13,9 +13,10 @@ import {
   Shield,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { withPageCanonical } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Move-Up Sellers Las Vegas | Berkshire Hathaway HomeServices",
+export const metadata: Metadata = withPageCanonical("/sellers/move-up", {
+  title: "Move-Up Sellers Las Vegas",
   description:
     "Ready for your next chapter? Dr. Jan Duffy helps Las Vegas homeowners leverage equity into their dream home. Sell and buy seamlessly. Call (702) 222-1964.",
   keywords: [
@@ -23,9 +24,9 @@ export const metadata: Metadata = {
     "sell and buy Las Vegas",
     "home equity Las Vegas",
     "upgrade home Las Vegas",
-    "Berkshire Hathaway HomeServices seller",
+    "seller",
   ],
-};
+});
 
 export default function MoveUpSellerPage() {
   return (
@@ -333,7 +334,7 @@ export default function MoveUpSellerPage() {
                 financial moves."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, Nevada Properties
               </cite>
             </div>
           </section>

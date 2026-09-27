@@ -4,19 +4,20 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Shield, Users, Globe, Award, TrendingUp, CheckCircle, Phone } from "lucide-react";
 import type { Metadata } from "next";
+import { withPageCanonical } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Why Choose Berkshire Hathaway HomeServices | Las Vegas Real Estate",
+export const metadata: Metadata = withPageCanonical("/why-berkshire-hathaway", {
+  title: "Why Work With Dr. Jan Duffy | Las Vegas Real Estate",
   description:
-    "Discover why Berkshire Hathaway HomeServices is the most trusted name in real estate. Backed by Warren Buffett, with 50,000+ agents worldwide. Work with BHHS Nevada Properties today.",
+    "Why buyers and sellers choose Dr. Jan Duffy for Las Vegas real estate — local expertise, map search, and non-HOA home specialization.",
   keywords: [
     "Berkshire Hathaway HomeServices",
     "why choose BHHS",
     "Warren Buffett real estate",
     "trusted real estate brand",
-    "BHHS Nevada Properties",
+    "Nevada Properties",
   ],
-};
+});
 
 // Organization Schema
 const organizationSchema = {
@@ -26,7 +27,7 @@ const organizationSchema = {
   url: "https://www.bhhs.com",
   logo: "https://heyberkshire.com/favicon-32x32.png",
   description:
-    "Berkshire Hathaway HomeServices is a real estate brokerage network, part of Berkshire Hathaway Inc., one of the world's most respected and trusted companies.",
+    "is a real estate brokerage network, part of Berkshire Hathaway Inc., one of the world's most respected and trusted companies.",
   parentOrganization: {
     "@type": "Corporation",
     name: "Berkshire Hathaway Inc.",
@@ -50,7 +51,7 @@ export default function WhyBerkshireHathawayPage() {
               The Most Trusted Name in Real Estate
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Why Choose Berkshire Hathaway HomeServices?
+              Why Work With Dr. Jan Duffy?
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
               When you work with a <strong>Berkshire Hathaway HomeServices</strong> agent, you're
@@ -90,7 +91,7 @@ export default function WhyBerkshireHathawayPage() {
           {/* Key Benefits */}
           <section className="mb-16 max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
-              The BHHS Advantage
+              The Advantage
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white border border-slate-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
@@ -132,7 +133,7 @@ export default function WhyBerkshireHathawayPage() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Ethical Standards</h3>
                 <p className="text-slate-600">
-                  BHHS agents adhere to strict ethical guidelines that go beyond industry
+                  agents adhere to strict ethical guidelines that go beyond industry
                   requirements. Your interests always come first.
                 </p>
               </div>
@@ -154,7 +155,7 @@ export default function WhyBerkshireHathawayPage() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Proven Results</h3>
                 <p className="text-slate-600">
-                  BHHS Nevada Properties has helped thousands of families achieve their real estate
+                  Nevada Properties has helped thousands of families achieve their real estate
                   goals in Southern Nevada.
                 </p>
               </div>
@@ -164,7 +165,7 @@ export default function WhyBerkshireHathawayPage() {
           {/* Stats Section */}
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">
-              Berkshire Hathaway HomeServices By The Numbers
+              By The Numbers
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
@@ -191,7 +192,7 @@ export default function WhyBerkshireHathawayPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                  Your Local BHHS Expert in Las Vegas
+                  Your Local Expert in Las Vegas
                 </h2>
                 <p className="text-lg text-slate-700 mb-6">
                   Dr. Jan Duffy brings the power of <strong>Berkshire Hathaway HomeServices</strong>{" "}
@@ -222,12 +223,12 @@ export default function WhyBerkshireHathawayPage() {
               </div>
               <div className="bg-slate-100 rounded-lg p-8">
                 <blockquote className="text-lg text-slate-700 italic mb-4">
-                  "When clients ask why they should choose a Berkshire Hathaway HomeServices agent,
+                  "When clients ask why they should choose a agent,
                   I tell them: you're not just getting me—you're getting a global network of 50,000
                   agents, world-class marketing, and a brand that's synonymous with trust."
                 </blockquote>
                 <cite className="text-slate-900 font-semibold">
-                  — Dr. Jan Duffy, BHHS Nevada Properties
+                  — Dr. Jan Duffy, Nevada Properties
                 </cite>
               </div>
             </div>
@@ -241,20 +242,20 @@ export default function WhyBerkshireHathawayPage() {
             <div className="space-y-4">
               {[
                 {
-                  q: "Is Berkshire Hathaway HomeServices owned by Warren Buffett?",
-                  a: "Berkshire Hathaway HomeServices is part of HSF Affiliates LLC, which is a joint venture of Berkshire Hathaway Inc. (Warren Buffett's company) and HomeServices of America. The brand carries the trusted Berkshire Hathaway name and upholds its values of integrity and excellence.",
+                  q: "Is owned by Warren Buffett?",
+                  a: "is part of HSF Affiliates LLC, which is a joint venture of Berkshire Hathaway Inc. (Warren Buffett's company) and HomeServices of America. The brand carries the trusted Berkshire Hathaway name and upholds its values of integrity and excellence.",
                 },
                 {
-                  q: "What makes BHHS different from other real estate companies?",
-                  a: "BHHS is the only real estate brand backed by Warren Buffett's Berkshire Hathaway Inc. This provides unmatched financial stability, a global network of 50,000+ agents, world-class marketing resources, and a commitment to ethical standards that goes beyond industry requirements.",
+                  q: "What makes different from other real estate companies?",
+                  a: "is the only real estate brand backed by Warren Buffett's Berkshire Hathaway Inc. This provides unmatched financial stability, a global network of 50,000+ agents, world-class marketing resources, and a commitment to ethical standards that goes beyond industry requirements.",
                 },
                 {
                   q: "Does using a Berkshire Hathaway agent cost more?",
                   a: "No. Commission rates are negotiable and comparable to other brokerages. The value you receive—global marketing exposure, trusted brand recognition, and experienced agents—often helps homes sell faster and for more money.",
                 },
                 {
-                  q: "Can BHHS help with relocations to Las Vegas?",
-                  a: "Yes! Our global network makes relocations seamless. Dr. Jan Duffy can coordinate with BHHS agents in your current city while providing expert guidance on Las Vegas neighborhoods, schools, and communities.",
+                  q: "Can help with relocations to Las Vegas?",
+                  a: "Yes! Our global network makes relocations seamless. Dr. Jan Duffy can coordinate with agents in your current city while providing expert guidance on Las Vegas neighborhoods, schools, and communities.",
                 },
               ].map((faq, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-6">
@@ -281,7 +282,7 @@ export default function WhyBerkshireHathawayPage() {
               Call (702) 222-1964
             </a>
             <p className="mt-4 text-slate-400 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Nevada Properties
             </p>
           </section>
         </div>

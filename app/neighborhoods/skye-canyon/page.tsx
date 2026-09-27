@@ -4,19 +4,20 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { Phone, Mountain, Users, Home as HomeIcon, GraduationCap } from "lucide-react";
 import type { Metadata } from "next";
+import { withPageCanonical } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Skye Canyon | Northwest Las Vegas",
+export const metadata: Metadata = withPageCanonical("/neighborhoods/skye-canyon", {
+  title: "Skye Canyon | Northwest Las Vegas",
   description:
-    "Find Skye Canyon homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in this premier northwest community. Median price $550K. Call (702) 222-1964.",
+    "Find Skye Canyon homes with Nevada Properties. Dr. Jan Duffy specializes in this premier northwest community. Median price $550K. Call (702) 222-1964.",
   keywords: [
-    "Berkshire Hathaway HomeServices Skye Canyon",
+    "Skye Canyon",
     "Skye Canyon homes for sale",
     "Skye Canyon Las Vegas",
     "northwest Las Vegas homes",
     "new construction Skye Canyon",
   ],
-};
+});
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -48,10 +49,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Why use Berkshire Hathaway HomeServices for Skye Canyon new construction?",
+      name: "Why use for Skye Canyon new construction?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "BHHS provides free buyer representation on new construction purchases—the builder pays our commission. Dr. Jan Duffy can negotiate upgrades, review contracts, and ensure your interests are protected when builder sales agents work for the builder.",
+        text: "provides free buyer representation on new construction purchases—the builder pays our commission. Dr. Jan Duffy can negotiate upgrades, review contracts, and ensure your interests are protected when builder sales agents work for the builder.",
       },
     },
   ],
@@ -81,10 +82,10 @@ export default function SkyeCanyonPage() {
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Nevada Properties
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Berkshire Hathaway HomeServices Skye Canyon
+              Skye Canyon
             </h1>
             <p className="text-xl text-slate-600">
               Northwest Las Vegas's fastest-growing community. Discover Skye Canyon with{" "}
@@ -139,7 +140,7 @@ export default function SkyeCanyonPage() {
                 community connections that transform neighborhoods into true communities.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> offers free buyer
+                <strong>Nevada Properties</strong> offers free buyer
                 representation on all Skye Canyon new construction purchases. This is crucial because
                 when you walk into a builder's sales center, those agents work for the builder—not you.
                 Dr. Jan Duffy represents your interests, negotiates upgrades, reviews contracts for
@@ -308,12 +309,12 @@ export default function SkyeCanyonPage() {
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Skye Canyon is where young families want to be right now. The amenities are incredible,
                 the homes are modern and energy-efficient, and the community vibe is exactly what people
-                are looking for. As a Berkshire Hathaway HomeServices agent, I make sure my clients get
+                are looking for. As a agent, I make sure my clients get
                 the best value—whether that's negotiating builder upgrades or finding a resale with
                 features already included."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, Nevada Properties
               </cite>
             </div>
           </section>
@@ -356,10 +357,10 @@ export default function SkyeCanyonPage() {
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  Why use Berkshire Hathaway HomeServices for Skye Canyon new construction?
+                  Why use for Skye Canyon new construction?
                 </h3>
                 <p className="text-slate-600">
-                  BHHS provides free buyer representation on new construction purchases—the builder pays
+                  provides free buyer representation on new construction purchases—the builder pays
                   our commission. Dr. Jan Duffy can negotiate upgrades, review contracts, and ensure
                   your interests are protected when builder sales agents work for the builder.
                 </p>
@@ -373,7 +374,7 @@ export default function SkyeCanyonPage() {
               Discover Skye Canyon Living
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Contact Dr. Jan Duffy, your Berkshire Hathaway HomeServices Skye Canyon specialist,
+              Contact Dr. Jan Duffy, your Skye Canyon specialist,
               for expert guidance on new construction and resale homes.
             </p>
             <a
@@ -384,7 +385,7 @@ export default function SkyeCanyonPage() {
               Call (702) 222-1964
             </a>
             <p className="mt-4 text-blue-200 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Nevada Properties
             </p>
           </section>
         </div>
