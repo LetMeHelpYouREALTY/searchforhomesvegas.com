@@ -24,7 +24,7 @@ export const metadata: Metadata = withPageCanonical("/sellers/downsizing", {
     "downsizing Las Vegas",
     "sell large home Las Vegas",
     "55 plus communities Las Vegas",
-    "downsizing Las Vegas",
+    "single-story homes Las Vegas",
     "downsizing",
   ],
 });
