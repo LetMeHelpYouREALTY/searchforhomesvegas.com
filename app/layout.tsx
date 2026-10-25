@@ -8,11 +8,15 @@ import GlobalHeroBanner from "@/components/layout/GlobalHeroBanner";
 import { rootLayoutMetadata } from "@/lib/metadata";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const pathname = headers().get("x-pathname") || "/";
+  const pathname = (await headers()).get("x-pathname") || "/";
   return rootLayoutMetadata(pathname);
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={GeistSans.className}>
       <head>
