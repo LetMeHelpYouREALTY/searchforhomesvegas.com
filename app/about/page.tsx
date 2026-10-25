@@ -22,7 +22,7 @@ import { withPageCanonical } from "@/lib/metadata";
 export const metadata: Metadata = withPageCanonical("/about", {
   title: "About Dr. Jan Duffy Las Vegas",
   description:
-    "Meet Dr. Jan Duffy, Las Vegas REALTOR®. Serving the valley since 2008, $127M+ in transactions, Henderson and Summerlin specialist. Call (702) 222-1964.",
+    "Meet Dr. Jan Duffy, Las Vegas REALTOR®. Serving the valley since 2008, $127M+ in Dr. Duffy Group career sales, Henderson and Summerlin specialist. Call (702) 222-1964.",
   keywords: [
     "Dr. Jan Duffy",
     "agent",
@@ -155,8 +155,8 @@ export default function AboutPage() {
                     world-class resources and local expertise to every client I serve.
                   </p>
                   <p>
-                    Since 2008, I've closed $127 million in transactions and
-                    helped hundreds of families find their perfect home in Las Vegas, Henderson,
+                    Since 2008, I've led the Dr. Duffy Group to $127M+ in career sales and
+                    helped hundreds of clients find their perfect home in Las Vegas, Henderson,
                     Summerlin, and throughout Southern Nevada. My expertise spans luxury properties,
                     new construction, investment real estate, 55+ active adult communities, and 
                     relocations—particularly for California families seeking Nevada's tax advantages.
