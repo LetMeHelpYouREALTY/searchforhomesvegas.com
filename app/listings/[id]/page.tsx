@@ -18,7 +18,7 @@ export async function generateMetadata({
   return withPageCanonical(`/listings/${id}`, {
     title: `Las Vegas Property ${id} | Listing Details`,
     description:
-      "View property details for this Las Vegas area listing. Contact Dr. Jan Duffy at (702) 222-1964 for a private showing.",
+      "View property details for this Las Vegas area listing. Contact Dr. Jan Duffy at (702) 500-1955 for a private showing.",
   });
 }
 
@@ -170,7 +170,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
                     asChild
                     className="w-full bg-blue-600 hover:bg-blue-700"
                   >
-                    <a href="tel:+17022221964">Call (702) 222-1964</a>
+                    <a href="tel:+17025001955">Call (702) 500-1955</a>
                   </Button>
                   <Button asChild variant="outline" className="w-full">
                     <a href="/contact">Send Message</a>
