@@ -144,8 +144,8 @@ export default async function Home() {
         </section>
 
         <FeaturedListing
-          phone="(702) 919-5002"
-          phoneHref="tel:+17029195002"
+          phone="(702) 500-1955"
+          phoneHref="tel:+17025001955"
           siteHost="searchforhomesvegas.com"
         />
 
