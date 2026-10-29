@@ -36,12 +36,22 @@ export const metadata: Metadata = {
 
 export default function FeaturedListingPage() {
   if (!l.active) notFound();
-  const jsonLd = JSON.stringify(featuredListingJsonLd(l.canonicalUrl)).replace(/</g, "\\u003c");
+  const jsonLd = JSON.stringify(featuredListingJsonLd(l.canonicalUrl)).replace(
+    /</g,
+    "\\u003c",
+  );
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />
-      <FeaturedListingPageBody phone="(702) 919-5002" phoneHref="tel:+17029195002" siteHost="searchforhomesvegas.com" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: jsonLd }}
+      />
+      <FeaturedListingPageBody
+        phone="(702) 919-5002"
+        phoneHref="tel:+17029195002"
+        siteHost="searchforhomesvegas.com"
+      />
     </>
   );
 }
