@@ -18,7 +18,7 @@ export async function generateMetadata({
   return withPageCanonical(`/listings/${id}`, {
     title: `Las Vegas Property ${id} | Listing Details`,
     description:
-      "View property details for this Las Vegas area listing. Contact Dr. Jan Duffy at (702) 500-1955 for a private showing.",
+      "View property details for this Las Vegas area listing. Contact Dr. Jan Duffy at (702) 222-1964 for a private showing.",
   });
 }
 
