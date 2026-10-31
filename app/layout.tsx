@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import GlobalHeroBanner from "@/components/layout/GlobalHeroBanner";
 import { rootLayoutMetadata } from "@/lib/metadata";
+import { SpeedInsights as VercelSpeedInsights } from "@vercel/speed-insights/next";
 
 export async function generateMetadata(): Promise<Metadata> {
   const pathname = (await headers()).get("x-pathname") || "/";
@@ -35,6 +36,7 @@ export default function RootLayout({
         <GlobalHeroBanner />
         {children}
         <Analytics />
+        <VercelSpeedInsights />
       </body>
     </html>
   );
