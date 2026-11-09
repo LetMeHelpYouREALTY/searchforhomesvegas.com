@@ -1,6 +1,9 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
+import AgentPortrait from "@/components/agent/AgentPortrait";
+import CalendlyButton from "@/components/calendly/CalendlyButton";
+import { CALENDLY } from "@/lib/calendly";
 import Link from "next/link";
 import { 
   Phone, 
@@ -15,6 +18,7 @@ import {
   Star,
   Clock,
   ArrowRight,
+  Calendar,
 } from "lucide-react";
 import type { Metadata } from "next";
 import { withPageCanonical } from "@/lib/metadata";
@@ -125,23 +129,51 @@ export default function AboutPage() {
         <div className="container mx-auto px-4">
           {/* Hero Section */}
           <div className="max-w-4xl mx-auto text-center mb-16">
+            <div className="mb-6 flex justify-center">
+              <AgentPortrait size="xl" caption priority />
+            </div>
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Nevada Properties
+              No HOA Las Vegas Homes
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               About Dr. Jan Duffy
             </h1>
-            <p className="text-xl text-slate-600">
-              Dr. Jan Duffy has been serving Las Vegas since 2008—backed by the most
-              trusted name in real estate. Whether you're buying, selling, investing, or 
-              relocating, you'll receive expert guidance with integrity and professionalism.
+            <p className="text-xl text-slate-600 mb-8">
+              Dr. Jan Duffy has been serving Las Vegas since 2008. Whether you're buying, selling,
+              investing, or relocating, you'll receive expert guidance with integrity and
+              professionalism.
             </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <CalendlyButton
+                url={CALENDLY.buyerConsultation}
+                className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 font-semibold no-underline hover:bg-blue-700"
+              >
+                <Calendar className="h-4 w-4" />
+                Schedule a consultation
+              </CalendlyButton>
+              <a
+                href="tel:+17025001955"
+                className="inline-flex items-center justify-center gap-2 border border-slate-300 text-slate-800 px-6 py-3 font-semibold no-underline hover:border-slate-500"
+              >
+                <Phone className="h-4 w-4" />
+                Call 702-500-1955
+              </a>
+            </div>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Agent Profile */}
           <section className="mb-16">
             <div className="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
               <div>
+                <div className="mb-6 md:hidden flex justify-center">
+                  <AgentPortrait size="lg" caption />
+                </div>
+                <div className="mb-6 hidden md:block">
+                  <AgentPortrait size="xl" caption />
+                </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Dr. Jan Duffy</h2>
                 <p className="text-lg text-blue-600 mb-6">
                   REALTOR® | License S.0197614.LLC
@@ -460,7 +492,6 @@ export default function AboutPage() {
           Last Updated: January 2026
         </div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

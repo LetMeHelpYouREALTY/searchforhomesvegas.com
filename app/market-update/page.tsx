@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -91,6 +91,8 @@ export default function MarketUpdatePage() {
               <span>By Dr. Jan Duffy, REALTOR®</span>
             </div>
           </div>
+
+          <RealScoutListings />
 
           {/* Key Statistics */}
           <section className="mb-16 max-w-5xl mx-auto">
@@ -433,7 +435,6 @@ export default function MarketUpdatePage() {
           Last Updated: January 24, 2026 | Data Source: Las Vegas REALTORS® MLS
         </div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

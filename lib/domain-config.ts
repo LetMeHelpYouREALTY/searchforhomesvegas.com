@@ -114,7 +114,7 @@ export const DEFAULT_CONFIG: DomainConfig = {
   tagline: "Las Vegas Homes for Sale",
   description: "Search Las Vegas homes for sale. Expert real estate guidance from Dr. Jan Duffy, BHHS Nevada Properties.",
   heroHeadline: "Las Vegas Homes for Sale",
-  heroSubheadline: "Expert real estate guidance from Dr. Jan Duffy — 30+ years, 500+ families helped.",
+  heroSubheadline: "Expert real estate guidance from Dr. Jan Duffy — 30+ years and $127M+ in closed volume.",
   keywords: ["Las Vegas homes for sale", "Las Vegas real estate", "Dr Jan Duffy"],
   pageType: "search",
   realscoutAgentId: REALSCOUT_AGENT_ID,

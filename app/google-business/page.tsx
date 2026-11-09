@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
@@ -124,6 +125,8 @@ export default function GoogleBusinessPage() {
               </div>
             </div>
           </section>
+
+          <RealScoutListings />
 
           {/* Business Hours */}
           <section className="max-w-5xl mx-auto mb-16">

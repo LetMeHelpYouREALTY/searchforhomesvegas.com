@@ -14,7 +14,7 @@ export type GlobalHeroConfig = {
 export const GLOBAL_HERO: GlobalHeroConfig = {
   src: "/images/global-hero/heyberkshire.jpg",
   alt: "Las Vegas Valley desert skyline and residential rooftops at dusk, Las Vegas, NV",
-  tagline: "Las Vegas homes with no HOA — Dr. Jan Duffy",
+  tagline: "No HOA Las Vegas Homes by Dr Jan Duffy",
   phoneDisplay: "(702) 500-1955",
   phoneTel: "tel:+17025001955",
 };

@@ -1,21 +1,21 @@
+import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/layouts/Navbar";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import ReviewsSection from "@/components/sections/ReviewsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import Footer from "@/components/layouts/Footer";
-import Link from "next/link";
 import FeaturedListing from "@/components/sections/FeaturedListing";
-import { Phone, Home as HomeIcon, TrendingUp, Shield, Users } from "lucide-react";
+import CalendlyButton from "@/components/calendly/CalendlyButton";
+import AgentPortrait from "@/components/agent/AgentPortrait";
+import { CALENDLY } from "@/lib/calendly";
+import { Phone, Calendar } from "lucide-react";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
 import { getFaqsForDomain } from "@/lib/faq-config";
 import { getSiteUrl } from "@/lib/site-url";
 
-// Maps pageType → human-readable FAQ section title/subtitle
-const FAQ_SECTION_COPY: Record<
-  string,
-  { title: string; subtitle: string }
-> = {
+const FAQ_SECTION_COPY: Record<string, { title: string; subtitle: string }> = {
   community: {
     title: "Community Real Estate FAQ",
     subtitle: "Common questions from buyers and sellers in this neighborhood",
@@ -44,18 +44,13 @@ const FAQ_SECTION_COPY: Record<
 
 export default async function Home() {
   const config = await getPageDomainConfig();
-
-  // ── Domain-aware FAQs ────────────────────────────────────────────────────
   const faqs = getFaqsForDomain(config.pageType, config.domain);
   const faqCopy = FAQ_SECTION_COPY[config.pageType] ?? FAQ_SECTION_COPY["search"];
-
-  // Personalise the FAQ title with the neighborhood name for community/55+ pages
   const faqTitle =
     config.pageType === "community" || config.pageType === "55plus"
       ? `${config.neighborhood} FAQ`
       : faqCopy.title;
 
-  // ── Schema: RealEstateAgent ──────────────────────────────────────────────
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
@@ -71,7 +66,6 @@ export default async function Home() {
     },
   };
 
-  // ── Schema: FAQPage ──────────────────────────────────────────────────────
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -97,51 +91,66 @@ export default async function Home() {
       />
       <Navbar />
       <main>
-        {/* Domain-Aware Hero */}
-        <section className="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-30"
-            style={{ backgroundImage: "url('/Image/hero_bg_1.jpg')" }}
-          />
-          <div className="relative z-10 container mx-auto px-4 text-center">
-            {config.ctaBadge && (
-              <span className="inline-block bg-blue-600 text-white text-sm font-semibold px-4 py-1 rounded-full mb-6">
-                {config.ctaBadge}
-              </span>
-            )}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              {config.heroHeadline}
-            </h1>
-            <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-3xl mx-auto">
-              {config.heroSubheadline}
-            </p>
+        {/* Luxury full-bleed hero — brand, one headline, one line, one CTA group */}
+        <section className="relative min-h-[100svh] flex items-end overflow-hidden bg-ink text-stone-soft">
+          <div className="absolute inset-0">
+            <Image
+              src="/Image/hero_bg_1.jpg"
+              alt="Las Vegas Valley homes at dusk with mountain backdrop"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center motion-safe:animate-ken-burns"
+            />
+            <div
+              className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/25"
+              aria-hidden="true"
+            />
+          </div>
 
-            {/* RealScout Search Widget */}
-            <div className="mb-8 flex justify-center">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `<realscout-simple-search agent-encoded-id="${config.realscoutAgentId}"></realscout-simple-search>`,
-                }}
-              />
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center gap-6 text-white/80 text-sm">
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-white">500+</span>
-                <span>Families Helped</span>
+          <div className="relative z-10 container mx-auto px-4 pb-16 pt-32 md:pb-24 md:pt-40">
+            <div className="max-w-3xl motion-safe:animate-fade-up">
+              <p className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight mb-2">
+                No HOA Las Vegas Homes
+              </p>
+              <p className="text-sm sm:text-base uppercase tracking-[0.22em] text-bronze-soft mb-8">
+                by Dr Jan Duffy
+              </p>
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium text-white/95 leading-[1.1] mb-5">
+                {config.heroHeadline}
+              </h1>
+              <p className="text-lg md:text-xl text-stone/85 max-w-2xl mb-10 font-light leading-relaxed">
+                {config.heroSubheadline}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-10">
+                <a
+                  href="tel:+17025001955"
+                  className="inline-flex items-center justify-center gap-2 bg-bronze text-ink px-7 py-3.5 text-sm font-semibold tracking-wide hover:bg-bronze-soft no-underline"
+                >
+                  <Phone className="h-4 w-4" />
+                  Call 702-500-1955
+                </a>
+                <CalendlyButton
+                  url={CALENDLY.buyerConsultation}
+                  className="inline-flex items-center justify-center gap-2 border border-stone/40 text-stone-soft px-7 py-3.5 text-sm font-semibold tracking-wide hover:border-bronze hover:text-bronze-soft no-underline"
+                >
+                  <Calendar className="h-4 w-4" />
+                  Schedule a consultation
+                </CalendlyButton>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-white">30+ Years</span>
-                <span>Las Vegas Experience</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-white">Map Search</span>
-                <span>Non-HOA Listings</span>
+              <div className="realscout-wrapper justify-start px-0">
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: `<realscout-simple-search agent-encoded-id="${config.realscoutAgentId}"></realscout-simple-search>`,
+                  }}
+                />
               </div>
             </div>
           </div>
         </section>
+
+        <RealScoutListings />
+
 
         <FeaturedListing
           phone="(702) 500-1955"
@@ -149,104 +158,155 @@ export default async function Home() {
           siteHost="searchforhomesvegas.com"
         />
 
-        {/* Value Proposition */}
-        <section className="py-16 md:py-20 bg-white">
+        {/* Editorial proof — one job, no card chrome */}
+        <section className="py-20 md:py-28 bg-stone-soft">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Why Work With Dr. Jan Duffy?
-              </h2>
-              <p className="text-lg text-slate-600">
-                Nevada Properties — the most trusted name in Las Vegas real estate.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-              {[
-                { icon: Shield, title: "Trusted Brand", desc: "Backed by Warren Buffett's Berkshire Hathaway — unmatched integrity" },
-                { icon: Users, title: "50K+ Network", desc: "Global referral network for seamless moves to or from any market" },
-                { icon: TrendingUp, title: "$127M+ Sold", desc: "Proven results across every Las Vegas neighborhood since 2008" },
-                { icon: HomeIcon, title: "Full Service", desc: "Buying, selling, 55+, luxury, investment — one expert handles it all" },
-              ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="text-center p-6">
-                  <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <Icon className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <h3 className="font-bold text-lg mb-2">{title}</h3>
-                  <p className="text-slate-600 text-sm">{desc}</p>
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-end">
+              <div className="lg:col-span-5">
+                <div className="mb-6">
+                  <AgentPortrait size="xl" caption priority />
                 </div>
-              ))}
+                <p className="text-[11px] uppercase tracking-[0.24em] text-bronze-deep mb-4">
+                  Why Dr. Jan
+                </p>
+                <h2 className="font-display text-4xl md:text-5xl text-ink leading-tight mb-6">
+                  Las Vegas market depth with direct, no-HOA expertise.
+                </h2>
+                <p className="text-ink/70 text-lg font-light leading-relaxed mb-8">
+                  Since 2008: $127M+ closed, map-first search, and direct access — she answers
+                  702-500-1955 herself.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 items-start">
+                  <a
+                    href="tel:+17025001955"
+                    className="inline-flex items-center gap-2 text-ink font-semibold tracking-wide border-b border-bronze pb-1 no-underline hover:text-bronze-deep"
+                  >
+                    <Phone className="h-4 w-4" />
+                    Talk with Dr. Jan
+                  </a>
+                  <CalendlyButton
+                    url={CALENDLY.buyerConsultation}
+                    className="inline-flex items-center gap-2 text-ink font-semibold tracking-wide border-b border-bronze pb-1 no-underline hover:text-bronze-deep"
+                  >
+                    <Calendar className="h-4 w-4" />
+                    Schedule online
+                  </CalendlyButton>
+                </div>
+              </div>
+              <div className="lg:col-span-7 grid sm:grid-cols-3 gap-10 sm:gap-8">
+                {[
+                  {
+                    value: "30+",
+                    label: "Years in Las Vegas",
+                    detail: "Neighborhood-level pricing, not portal averages.",
+                  },
+                  {
+                    value: "$127M+",
+                    label: "Career volume",
+                    detail: "Buyers, sellers, luxury, 55+, and investment deals.",
+                  },
+                  {
+                    value: "5.0★",
+                    label: "Realtor.com",
+                    detail: "Verified rating across 50 published reviews.",
+                  },
+                ].map((item) => (
+                  <div key={item.label} className="border-t border-ink/15 pt-6">
+                    <div className="font-display text-4xl text-ink mb-2">{item.value}</div>
+                    <div className="text-sm font-semibold tracking-wide text-ink mb-2">
+                      {item.label}
+                    </div>
+                    <p className="text-sm text-ink/60 font-light leading-relaxed">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Market Stats */}
-        <section className="py-16 bg-slate-900 text-white">
+        {/* Market pulse */}
+        <section className="py-20 md:py-24 bg-ink text-stone-soft">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold mb-3">
-                {config.neighborhood} Real Estate Market
+            <div className="max-w-2xl mb-14">
+              <p className="text-[11px] uppercase tracking-[0.24em] text-bronze-soft mb-4">
+                Market pulse
+              </p>
+              <h2 className="font-display text-3xl md:text-5xl text-white leading-tight">
+                {config.neighborhood} real estate, current read
               </h2>
-              <p className="text-slate-400">Current data — updated regularly</p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 max-w-5xl">
               {[
-                { value: "$450K", label: "Median Price", sub: "+4.2% YoY" },
-                { value: "28", label: "Avg Days on Market", sub: "" },
-                { value: "4,850", label: "Active Listings", sub: "" },
-                { value: "2.1", label: "Months Inventory", sub: "" },
-              ].map(({ value, label, sub }) => (
-                <div key={label} className="text-center">
-                  <div className="text-4xl font-bold text-blue-400 mb-1">{value}</div>
-                  <div className="text-slate-300 text-sm">{label}</div>
-                  {sub && <div className="text-green-400 text-xs mt-1">{sub}</div>}
+                { value: "$450K", label: "Median price" },
+                { value: "28", label: "Avg days on market" },
+                { value: "4,850", label: "Active listings" },
+                { value: "2.1", label: "Months of inventory" },
+              ].map(({ value, label }) => (
+                <div key={label}>
+                  <div className="font-display text-4xl md:text-5xl text-bronze-soft mb-2">
+                    {value}
+                  </div>
+                  <div className="text-sm text-stone/60 tracking-wide">{label}</div>
                 </div>
               ))}
             </div>
-            <div className="text-center mt-8">
-              <Link href="/market-report" className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition-colors">
-                Full Market Report
+            <div className="mt-12">
+              <Link
+                href="/market-report"
+                className="inline-flex border border-stone/30 text-stone-soft px-6 py-3 text-sm font-semibold tracking-wide hover:border-bronze hover:text-bronze-soft no-underline"
+              >
+                Full market report
               </Link>
             </div>
           </div>
         </section>
 
-        <RealScoutListings />
         <WhyChooseUs />
         <ReviewsSection />
 
-        {/* Domain-Aware FAQ with FAQPage schema already injected above */}
-        <FAQSection
-          faqs={faqs}
-          title={faqTitle}
-          subtitle={faqCopy.subtitle}
-        />
+        <FAQSection faqs={faqs} title={faqTitle} subtitle={faqCopy.subtitle} />
 
-        {/* Domain-Specific CTA */}
-        <section className="py-16 md:py-20 bg-blue-600 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        {/* Single primary CTA */}
+        <section className="relative py-24 md:py-28 overflow-hidden bg-ink text-stone-soft">
+          <div
+            className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-bronze/40 via-transparent to-transparent"
+            aria-hidden="true"
+          />
+          <div className="relative container mx-auto px-4 text-center max-w-3xl">
+            <div className="mb-8 flex justify-center">
+              <AgentPortrait size="lg" />
+            </div>
+            <p className="font-display text-2xl md:text-3xl text-white mb-2">
+              No HOA Las Vegas Homes
+            </p>
+            <p className="text-[11px] uppercase tracking-[0.22em] text-bronze-soft mb-6">
+              by Dr Jan Duffy
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl text-white leading-tight mb-5">
               {config.ctaHeadline}
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-stone/75 font-light mb-10 leading-relaxed">
               {config.ctaSubheadline}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
                 href="tel:+17025001955"
-                className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
+                className="inline-flex items-center justify-center gap-2 bg-bronze text-ink px-8 py-4 text-base font-semibold tracking-wide hover:bg-bronze-soft no-underline"
               >
-                <Phone className="h-5 w-5 mr-2" />
+                <Phone className="h-5 w-5" />
                 Call 702-500-1955
               </a>
-              <Link
-                href="/contact"
-                className="inline-block bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors"
+              <CalendlyButton
+                url={CALENDLY.buyerConsultation}
+                className="inline-flex items-center justify-center gap-2 border border-stone/35 text-stone-soft px-8 py-4 text-base font-semibold tracking-wide hover:border-bronze hover:text-bronze-soft no-underline"
               >
-                Send a Message
-              </Link>
+                <Calendar className="h-5 w-5" />
+                Schedule online
+              </CalendlyButton>
             </div>
-            <p className="mt-6 text-blue-200 text-sm">
-              Dr. Jan Duffy | License S.0197614.LLC Nevada Properties
+            <p className="mt-8 text-sm text-stone/50">
+              No HOA Las Vegas Homes by Dr Jan Duffy · License S.0197614.LLC · 9406 W Lake Mead
+              Blvd, Suite 100, Las Vegas, NV 89134
             </p>
           </div>
         </section>

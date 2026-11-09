@@ -1,6 +1,9 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
+import AgentPortrait from "@/components/agent/AgentPortrait";
+import CalendlyButton from "@/components/calendly/CalendlyButton";
+import { CALENDLY } from "@/lib/calendly";
 import { Phone, Mail, MapPin, Clock, Calendar, CheckCircle, Star, Users, Shield } from "lucide-react";
 import CalendlyWidget from "@/components/calendly/CalendlyWidget";
 import Link from "next/link";
@@ -51,18 +54,39 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="text-center mb-12">
+            <div className="mb-6 flex justify-center">
+              <AgentPortrait size="xl" caption priority />
+            </div>
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Nevada Properties
+              No HOA Las Vegas Homes
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
               Contact Dr. Jan Duffy
             </h1>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Questions about Las Vegas real estate? Your{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> expert is here to help. 
-              Schedule an appointment or reach out directly.
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-8">
+              Questions about Las Vegas real estate? Schedule an appointment or reach out
+              directly — Dr. Jan answers 702-500-1955 herself.
             </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <CalendlyButton
+                url={CALENDLY.buyerConsultation}
+                className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 font-semibold no-underline hover:bg-blue-700"
+              >
+                <Calendar className="h-4 w-4" />
+                Schedule online
+              </CalendlyButton>
+              <a
+                href="tel:+17025001955"
+                className="inline-flex items-center justify-center gap-2 border border-slate-300 text-slate-800 px-6 py-3 font-semibold no-underline hover:border-slate-500"
+              >
+                <Phone className="h-4 w-4" />
+                Call 702-500-1955
+              </a>
+            </div>
           </div>
+
+          <RealScoutListings />
+
 
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Info & Map */}
@@ -70,9 +94,9 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-slate-900 mb-6">Get In Touch</h2>
               <p className="text-slate-700 mb-8">
                 Whether you're buying your first home, selling a luxury property, or exploring
-                investment opportunities, I'm here to provide expert guidance backed by the trusted{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> brand. Serving Las Vegas since 2008 
-                with $127M+ in closed transactions.
+                investment opportunities, Dr. Jan Duffy provides direct guidance for non-HOA and
+                valley-wide searches. Serving Las Vegas since 2008 with $127M+ in closed
+                transactions.
               </p>
 
               {/* NAP Information */}
@@ -321,7 +345,6 @@ export default function ContactPage() {
         {/* Last Updated */}
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

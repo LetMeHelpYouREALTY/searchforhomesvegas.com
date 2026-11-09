@@ -1,12 +1,16 @@
 // Site configuration — searchforhomesvegas.com (single-site)
 
 export const siteConfig = {
-  name: "Search For Homes Vegas",
-  fullName: "Dr. Jan Duffy — Las Vegas Real Estate",
-  tagline: "Las Vegas homes with no HOA",
-  brandLine: "Las Vegas Homes with No HOA | Dr. Jan Duffy",
-  brandName: "Dr. Jan Duffy",
-  shortName: "SFHV",
+  /** Primary logo lockup — use in nav, hero brand, footer identity */
+  name: "No HOA Las Vegas Homes by Dr Jan Duffy",
+  logo: "No HOA Las Vegas Homes by Dr Jan Duffy",
+  logoPrimary: "No HOA Las Vegas Homes",
+  logoSecondary: "by Dr Jan Duffy",
+  fullName: "No HOA Las Vegas Homes by Dr Jan Duffy",
+  tagline: "No HOA Las Vegas Homes by Dr Jan Duffy",
+  brandLine: "No HOA Las Vegas Homes by Dr Jan Duffy",
+  brandName: "No HOA Las Vegas Homes by Dr Jan Duffy",
+  shortName: "No HOA LV Homes",
   url: "https://searchforhomesvegas.com",
   description:
     "Non-HOA homes in Las Vegas — rural-preservation areas in the northwest and southwest plus older central neighborhoods. Map search with Dr. Jan Duffy.",

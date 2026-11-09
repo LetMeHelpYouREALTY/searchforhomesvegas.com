@@ -1,61 +1,47 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Phone, Mail, Home } from "lucide-react";
+import { Phone, Calendar, Home } from "lucide-react";
+import AgentPortrait from "@/components/agent/AgentPortrait";
+import CalendlyButton from "@/components/calendly/CalendlyButton";
+import { CALENDLY } from "@/lib/calendly";
 
 export default function CTASection() {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+    <section className="py-16 md:py-24 bg-ink text-stone-soft">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Ready to Find Your Dream Home?
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="mb-6 flex justify-center">
+            <AgentPortrait size="lg" />
+          </div>
+          <h2 className="font-display text-3xl md:text-5xl text-white mb-4">
+            Ready to find your next home?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Let's start your real estate journey today. Get expert guidance, personalized service,
-            and results that exceed your expectations.
+          <p className="text-lg text-stone/70 font-light mb-8 max-w-2xl mx-auto leading-relaxed">
+            Book a consult with Dr. Jan Duffy — map search, comps, and a clear next step.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
-              <a href="http://drjanduffy.realscout.com/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                <Home className="h-5 w-5" />
-                Browse Properties
-              </a>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white/10"
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-8">
+            <a
+              href="http://drjanduffy.realscout.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 border border-stone/35 text-stone-soft px-7 py-3.5 text-sm font-semibold tracking-wide hover:border-bronze hover:text-bronze-soft no-underline"
             >
-              <Link href="/contact" className="flex items-center gap-2">
-                <Mail className="h-5 w-5" />
-                Get In Touch
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white/10"
+              <Home className="h-4 w-4" />
+              Browse properties
+            </a>
+            <CalendlyButton
+              url={CALENDLY.buyerConsultation}
+              className="inline-flex items-center justify-center gap-2 bg-bronze text-ink px-7 py-3.5 text-sm font-semibold tracking-wide hover:bg-bronze-soft no-underline"
             >
-              <Link href="tel:+17025001955" className="flex items-center gap-2">
-                <Phone className="h-5 w-5" />
-                Call Now
-              </Link>
-            </Button>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-6 text-blue-100 text-sm">
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-white">Free Consultation</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-white">No Obligation</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-white">Expert Guidance</span>
-            </div>
+              <Calendar className="h-4 w-4" />
+              Schedule online
+            </CalendlyButton>
+            <a
+              href="tel:+17025001955"
+              className="inline-flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-bronze-soft hover:text-white no-underline"
+            >
+              <Phone className="h-4 w-4" />
+              702-500-1955
+            </a>
           </div>
         </div>
       </div>
