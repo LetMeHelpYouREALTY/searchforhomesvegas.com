@@ -124,9 +124,18 @@ credentials.json
 *.temp
 
 # ===================
-# Large Media (use Git LFS if needed)
+# Large Media (track via Git LFS under public/videos)
 # ===================
-# Uncomment if you want to ignore large files
-# *.mp4
-# *.mov
-# *.avi
+# Keep accidental root-level media out of git
+/*.mp4
+/*.mov
+/*.webm
+/*.avi
+demo.mp4
+
+# Package manager backups / alternate lockfiles
+# Canonical install path is npm + package-lock.json (CI uses npm ci)
+pnpm-lock.yaml
+yarn.lock
+package.json.backup
+*.backup

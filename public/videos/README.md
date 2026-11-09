@@ -63,23 +63,19 @@ ffmpeg -i input.mp4 -an -vcodec h264 -crf 23 output-noaudio.mp4
 </video>
 ```
 
-## Git LFS (For Large Videos)
+## Git LFS
 
-If videos exceed 50MB, consider Git LFS:
+Video extensions (`*.mp4`, `*.mov`, `*.webm`, `*.avi`) are tracked with Git LFS via `.gitattributes`.
 
 ```bash
-# Install Git LFS
+# One-time per machine
 git lfs install
 
-# Track video files
-git lfs track "*.mp4"
-git lfs track "*.mov"
-git lfs track "*.webm"
-
-# Commit .gitattributes
-git add .gitattributes
-git commit -m "Enable Git LFS for videos"
+# Then add videos under this folder as usual
+git add public/videos/your-clip.mp4
 ```
+
+Do not commit videos at the repo root (e.g. `demo.mp4`) — they are gitignored.
 
 ## Notes
 
