@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import Navbar from "@/components/layouts/Navbar";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
@@ -14,6 +15,15 @@ import { Phone, Calendar } from "lucide-react";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
 import { getFaqsForDomain } from "@/lib/faq-config";
 import { getSiteUrl } from "@/lib/site-url";
+import { siteConfig } from "@/lib/site-config";
+import { SITE_ANGLE } from "@/lib/site-angle";
+import { withPageCanonical } from "@/lib/metadata";
+
+export const metadata: Metadata = withPageCanonical("/", {
+  title: SITE_ANGLE.title,
+  description: SITE_ANGLE.description,
+  keywords: [...SITE_ANGLE.keywords],
+});
 
 const FAQ_SECTION_COPY: Record<string, { title: string; subtitle: string }> = {
   community: {
@@ -54,16 +64,22 @@ export default async function Home() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    name: `Dr. Jan Duffy - ${config.neighborhood} Real Estate`,
+    "@id": `${getSiteUrl()}#business`,
+    name: siteConfig.name,
+    alternateName: `No HOA ${config.neighborhood} Homes by Dr Jan Duffy`,
     url: getSiteUrl(),
     telephone: "+17025001955",
+    image: `${getSiteUrl()}/images/agent/dr-jan-duffy.png`,
     address: {
       "@type": "PostalAddress",
       streetAddress: "9406 W Lake Mead Blvd, Suite 100",
       addressLocality: "Las Vegas",
       addressRegion: "NV",
       postalCode: "89134",
+      addressCountry: "US",
     },
+    areaServed: config.neighborhood,
+    knowsAbout: ["No HOA homes Las Vegas", "Luxury non-HOA estates", config.neighborhood],
   };
 
   const faqSchema = {

@@ -1,9 +1,10 @@
 "use client";
 
 import ScheduleSection from "@/components/sections/ScheduleSection";
+import NoHoaBuyerSection from "@/components/sections/NoHoaBuyerSection";
 
 /**
- * RealScout Office Listings widget + Calendly booking band.
+ * RealScout Office Listings + No-HOA persona + Calendly booking band.
  * Place immediately below each page hero. Scripts load once in root layout.
  */
 export default function RealScoutListings() {
@@ -23,13 +24,14 @@ export default function RealScoutListings() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-8">
             <div>
               <p className="text-[11px] uppercase tracking-[0.24em] text-bronze-deep mb-2">
-                Live MLS
+                Live MLS · No HOA focus
               </p>
               <h2 className="font-display text-3xl md:text-4xl text-ink tracking-tight">
                 Featured Properties
               </h2>
               <p className="text-ink/65 mt-2 font-light">
-                Las Vegas and Henderson listings — updated from the MLS
+                Las Vegas and Henderson listings for No HOA Las Vegas home buyers — updated from
+                the MLS
               </p>
             </div>
             <a
@@ -56,7 +58,11 @@ export default function RealScoutListings() {
           />
         </div>
       </section>
-      <ScheduleSection />
+      <NoHoaBuyerSection />
+      <ScheduleSection
+        title="Tour No HOA homes with Dr. Jan"
+        subtitle="Book a showing or a 30-minute buyer consult — she pulls non-HOA comps before you walk in."
+      />
     </>
   );
 }

@@ -81,19 +81,20 @@ export const socialProfiles = {
  * Used site-wide in the root layout
  */
 export function generateRealEstateAgentSchema() {
+  const portrait = `${BASE_URL}/images/agent/dr-jan-duffy.png`;
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "@id": `${BASE_URL}#organization`,
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
+    "@id": `${BASE_URL}#business`,
+    name: siteConfig.name,
     alternateName: [
-      "HeyBerkshire",
-      "BHHS Nevada Properties",
-      "Berkshire Hathaway HomeServices",
+      "No HOA Las Vegas Homes",
+      "Dr. Jan Duffy",
+      "Berkshire Hathaway HomeServices Nevada Properties",
     ],
     url: BASE_URL,
-    logo: `${BASE_URL}/images/dr-jan-duffy.jpg`,
-    image: `${BASE_URL}/images/dr-jan-duffy.jpg`,
+    logo: portrait,
+    image: portrait,
     description: siteConfig.description,
     telephone: "+1-702-500-1955",
     email: agentInfo.email,
@@ -134,13 +135,24 @@ export function generateRealEstateAgentSchema() {
         "@type": "Place",
         name: "Green Valley",
       },
+      {
+        "@type": "AdministrativeArea",
+        name: "Clark County",
+        addressRegion: "NV",
+      },
     ],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        opens: "08:00",
-        closes: "20:00",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Saturday",
+        opens: "10:00",
+        closes: "16:00",
       },
     ],
     hasCredential: {
@@ -157,9 +169,10 @@ export function generateRealEstateAgentSchema() {
       identifier: agentInfo.license,
     },
     sameAs: Object.values(socialProfiles),
+    employee: { "@id": `${BASE_URL}#person` },
     parentOrganization: {
       "@type": "Organization",
-      "@id": `${BASE_URL}#parent-organization`,
+      "@id": `${BASE_URL}#organization`,
       name: "Berkshire Hathaway HomeServices Nevada Properties",
       url: "https://www.bfrre.com",
       parentOrganization: {
@@ -170,17 +183,70 @@ export function generateRealEstateAgentSchema() {
       },
     },
     knowsAbout: [
-      "Las Vegas real estate",
+      "No HOA homes Las Vegas",
+      "Non-HOA Las Vegas real estate",
+      "Rural preservation neighborhoods Las Vegas",
+      "Horse property no HOA Las Vegas",
+      "RV parking homes without HOA",
+      "Luxury homes without HOA",
       "Henderson homes",
       "Summerlin properties",
-      "Luxury homes",
       "New construction",
       "Investment properties",
       "Relocation services",
       "55+ communities",
-      "First-time homebuyers",
     ],
-    slogan: "Your Berkshire Hathaway HomeServices expert in Las Vegas",
+    slogan: "No HOA Las Vegas Homes by Dr Jan Duffy",
+    makesOffer: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "No HOA Las Vegas home buyer representation",
+          description:
+            "Map-first search and showing support for Las Vegas homes without a homeowners association.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Luxury non-HOA estate search",
+          description:
+            "Guidance for custom and acreage luxury homes outside master-planned HOAs.",
+        },
+      },
+    ],
+  };
+}
+
+/** Person entity for Dr. Jan Duffy — AEO/entity anchors */
+export function generatePersonSchema() {
+  const portrait = `${BASE_URL}/images/agent/dr-jan-duffy.png`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${BASE_URL}#person`,
+    name: agentInfo.name,
+    jobTitle: agentInfo.title,
+    image: portrait,
+    url: `${BASE_URL}/about`,
+    telephone: "+1-702-500-1955",
+    email: agentInfo.email,
+    worksFor: { "@id": `${BASE_URL}#organization` },
+    affiliation: { "@id": `${BASE_URL}#business` },
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Real Estate License",
+      identifier: agentInfo.license,
+    },
+    knowsAbout: [
+      "No HOA homes Las Vegas",
+      "Las Vegas real estate",
+      "Luxury homes",
+      "California to Las Vegas relocation",
+    ],
+    sameAs: Object.values(socialProfiles),
   };
 }
 
@@ -191,10 +257,19 @@ export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": `${BASE_URL}#parent-organization`,
+    "@id": `${BASE_URL}#organization`,
     name: "Berkshire Hathaway HomeServices Nevada Properties",
     url: "https://www.bfrre.com",
-    logo: `${BASE_URL}/favicon-32x32.png`,
+    logo: `${BASE_URL}/images/agent/dr-jan-duffy.png`,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: officeInfo.address.street,
+      addressLocality: officeInfo.address.city,
+      addressRegion: officeInfo.address.state,
+      postalCode: officeInfo.address.zip,
+      addressCountry: "US",
+    },
+    telephone: "+1-702-500-1955",
     parentOrganization: {
       "@type": "Organization",
       name: "Berkshire Hathaway HomeServices",
@@ -236,10 +311,15 @@ export function generateWebSiteSchema() {
     "@type": "WebSite",
     "@id": `${BASE_URL}#website`,
     name: siteConfig.name,
+    alternateName: "No HOA Las Vegas Homes",
     url: BASE_URL,
     description: siteConfig.description,
+    inLanguage: "en-US",
     publisher: {
-      "@id": `${BASE_URL}#organization`,
+      "@id": `${BASE_URL}#business`,
+    },
+    about: {
+      "@id": `${BASE_URL}#business`,
     },
     potentialAction: {
       "@type": "SearchAction",
@@ -282,7 +362,7 @@ export function generateReviewSchema(reviews: ReviewItem[]) {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "@id": `${BASE_URL}#organization`,
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
+    name: siteConfig.name,
     review: reviews.map((review) => ({
       "@type": "Review",
       author: {

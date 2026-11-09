@@ -115,7 +115,7 @@ export function ReviewSchema({
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "@id": `${getSiteUrl()}#organization`,
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
+    name: "No HOA Las Vegas Homes by Dr Jan Duffy",
   };
 
   if (reviews && reviews.length > 0) {

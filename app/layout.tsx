@@ -6,6 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import GlobalHeroBanner from "@/components/layout/GlobalHeroBanner";
 import CalendlyBadge from "@/components/calendly/CalendlyBadge";
+import SiteJsonLd from "@/components/seo/SiteJsonLd";
 import { rootLayoutMetadata } from "@/lib/metadata";
 
 const display = Cormorant_Garamond({
@@ -67,6 +68,7 @@ export default async function RootLayout({
         `}</Script>
       </head>
       <body className="font-sans">
+        <SiteJsonLd />
         {showGlobalHero ? <GlobalHeroBanner /> : null}
         {children}
         <CalendlyBadge />

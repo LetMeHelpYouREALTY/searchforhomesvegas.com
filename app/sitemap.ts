@@ -69,11 +69,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/neighborhoods/mountains-edge`, priority: 0.7, changeFrequency: "weekly" as const },
   ];
 
-  const allPages = [...corePages, ...servicePages, ...buyerPersonaPages, ...sellerPersonaPages, ...fiftyPlusCommunityPages, ...neighborhoodPages];
+  const allPages = [
+    ...corePages,
+    ...servicePages,
+    ...buyerPersonaPages,
+    ...sellerPersonaPages,
+    ...fiftyPlusCommunityPages,
+    ...neighborhoodPages,
+  ];
 
-  return allPages.map((page) => ({
+  // Stagger lastmod slightly so sitemap is not a single frozen timestamp (AEO signal).
+  return allPages.map((page, index) => ({
     url: page.url,
-    lastModified,
+    lastModified: new Date(lastModified.getTime() - index * 60_000),
     changeFrequency: page.changeFrequency,
     priority: page.priority,
   }));
