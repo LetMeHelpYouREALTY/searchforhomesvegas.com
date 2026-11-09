@@ -3,22 +3,27 @@
 ## Development Setup
 
 ### Prerequisites
-- Node.js 18+
-- pnpm (recommended) or npm
+- Node.js 20+ (matches CI)
+- npm (canonical — `package-lock.json` is the source of truth)
 
 ### Getting Started
 
 ```bash
 # Clone the repository
-git clone https://github.com/DrJanDuffy/heyberkshire.com.git
-cd heyberkshire.com
+git clone https://github.com/LetMeHelpYouREALTY/searchforhomesvegas.com.git
+cd searchforhomesvegas.com
 
 # Install dependencies
-pnpm install
+npm ci
 
 # Start development server
-pnpm dev
+npm run next-dev
 ```
+
+### Git hygiene
+
+- Do not commit root-level video/demo media (`demo.mp4`, etc.). Put site videos under `public/videos/` (Git LFS tracks `*.mp4` / `*.mov` / `*.webm`).
+- Do not add `pnpm-lock.yaml` or `yarn.lock` — CI and Vercel use npm.
 
 ## Project Structure
 

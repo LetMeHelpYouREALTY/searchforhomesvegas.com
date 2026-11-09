@@ -33,10 +33,11 @@
 *.ttf binary
 *.eot binary
 
-# Git LFS tracking for large media files (optional - enable if needed)
-# *.mp4 filter=lfs diff=lfs merge=lfs -text
-# *.mov filter=lfs diff=lfs merge=lfs -text
-# *.webm filter=lfs diff=lfs merge=lfs -text
+# Git LFS for video assets (keeps clones lean; store under public/videos/)
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+*.webm filter=lfs diff=lfs merge=lfs -text
+*.avi filter=lfs diff=lfs merge=lfs -text
 
 # Exclude from language stats
 *.json linguist-detectable=false
