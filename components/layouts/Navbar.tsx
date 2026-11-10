@@ -2,18 +2,22 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import SiteLogo from "@/components/layouts/SiteLogo";
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 24);
     };
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -36,25 +40,24 @@ export default function Navbar() {
     { href: "/market-insights", label: "Market Insights" },
   ];
 
+  const overHero = isHome && !isScrolled;
+  const linkClass = overHero
+    ? "text-stone/90 hover:text-white font-medium transition-colors text-sm tracking-wide"
+    : "text-ink/80 hover:text-ink font-medium transition-colors text-sm tracking-wide";
+
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-md transition-all duration-300 ${
-        isScrolled ? "py-2" : "py-3"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        overHero
+          ? "bg-transparent py-5"
+          : "bg-stone-soft/95 backdrop-blur-md border-b border-ink/10 py-3 shadow-sm"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          {/* Brand Logo */}
-          <Link href="/" className="flex flex-col">
-            <span className="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 hover:text-blue-600 transition-colors leading-tight">
-              Berkshire Hathaway
-              <span className="text-blue-600"> HomeServices</span>
-            </span>
-            <span className="text-xs text-slate-500 hidden sm:block">Nevada Properties</span>
-          </Link>
+          <SiteLogo inverted={overHero} />
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-5">
+          <div className="hidden lg:flex items-center space-x-6">
             {mainNavLinks.map((link) =>
               link.external ? (
                 <a
@@ -62,57 +65,35 @@ export default function Navbar() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-700 hover:text-blue-600 font-medium transition-colors text-sm"
+                  className={`${linkClass} no-underline`}
                 >
                   {link.label}
                 </a>
               ) : (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-slate-700 hover:text-blue-600 font-medium transition-colors text-sm"
-                >
+                <Link key={link.href} href={link.href} className={`${linkClass} no-underline`}>
                   {link.label}
                 </Link>
               )
             )}
 
-            {/* Services Dropdown */}
             <div className="relative">
               <button
-                className="flex items-center text-slate-700 hover:text-blue-600 font-medium transition-colors text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded-md px-2 py-1"
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    setIsServicesOpen(!isServicesOpen);
-                  } else if (e.key === 'Escape') {
-                    setIsServicesOpen(false);
-                  }
-                }}
+                type="button"
+                className={`${linkClass} inline-flex items-center gap-1`}
+                onClick={() => setIsServicesOpen((open) => !open)}
                 aria-expanded={isServicesOpen}
-                aria-haspopup="true"
-                aria-label="Services menu"
               >
                 Services
-                <ChevronDown className="h-4 w-4 ml-1" aria-hidden="true" />
+                <ChevronDown className="h-4 w-4" />
               </button>
-
               {isServicesOpen && (
-                <div
-                  className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50"
-                  onMouseLeave={() => setIsServicesOpen(false)}
-                  role="menu"
-                  aria-orientation="vertical"
-                >
+                <div className="absolute right-0 mt-3 w-56 bg-stone-soft border border-ink/10 shadow-xl py-2">
                   {serviceLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
-                      className="block px-4 py-2 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 focus-visible:outline-none focus-visible:bg-blue-50 focus-visible:text-blue-600"
+                      className="block px-4 py-2 text-sm text-ink/80 hover:bg-ink/5 hover:text-ink no-underline"
                       onClick={() => setIsServicesOpen(false)}
-                      role="menuitem"
                     >
                       {link.label}
                     </Link>
@@ -121,37 +102,32 @@ export default function Navbar() {
               )}
             </div>
 
-            <Button asChild className="bg-blue-600 hover:bg-blue-700">
-              <Link href="tel:+17025001955" className="flex items-center gap-2">
-                <Phone className="h-4 w-4" />
-                <span className="hidden xl:inline">(702) 500-1955</span>
-                <span className="xl:hidden">Call</span>
-              </Link>
-            </Button>
+            <a
+              href="tel:+17025001955"
+              className={`inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold tracking-wide no-underline ${
+                overHero
+                  ? "bg-bronze text-ink hover:bg-bronze-soft"
+                  : "bg-ink text-stone-soft hover:bg-ink-soft"
+              }`}
+            >
+              <Phone className="h-4 w-4" />
+              702-500-1955
+            </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center gap-3">
-            <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700">
-              <Link href="tel:+17025001955">
-                <Phone className="h-4 w-4" />
-              </Link>
-            </Button>
-            <button
-              className="text-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded-md p-1"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
-              aria-expanded={isMobileMenuOpen}
-            >
-              {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
-            </button>
-          </div>
+          <button
+            type="button"
+            className={`lg:hidden p-2 ${overHero ? "text-white" : "text-ink"}`}
+            onClick={() => setIsMobileMenuOpen((open) => !open)}
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-slate-200">
-            <div className="flex flex-col space-y-1 pt-4">
+          <div className="lg:hidden mt-4 pb-4 border-t border-ink/10 bg-stone-soft/95 backdrop-blur-md px-1 pt-4">
+            <div className="flex flex-col gap-3">
               {mainNavLinks.map((link) =>
                 link.external ? (
                   <a
@@ -159,7 +135,7 @@ export default function Navbar() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition-colors py-2 px-3 rounded"
+                    className="text-ink font-medium no-underline"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
@@ -168,42 +144,30 @@ export default function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition-colors py-2 px-3 rounded"
+                    className="text-ink font-medium no-underline"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
                   </Link>
                 )
               )}
-
-              {/* Services Section */}
-              <div className="border-t border-slate-200 pt-2 mt-2">
-                <span className="text-xs font-semibold text-slate-500 px-3 uppercase">
-                  Services
-                </span>
-                {serviceLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition-colors py-2 px-3 rounded block"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-
-              <div className="pt-4">
-                <Button asChild className="bg-blue-600 hover:bg-blue-700 w-full">
-                  <Link
-                    href="tel:+17025001955"
-                    className="flex items-center justify-center gap-2"
-                  >
-                    <Phone className="h-4 w-4" />
-                    Call Dr. Jan: (702) 500-1955
-                  </Link>
-                </Button>
-              </div>
+              {serviceLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-ink/70 text-sm no-underline pl-2"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <a
+                href="tel:+17025001955"
+                className="inline-flex items-center justify-center gap-2 bg-ink text-stone-soft px-4 py-3 font-semibold no-underline"
+              >
+                <Phone className="h-4 w-4" />
+                Call 702-500-1955
+              </a>
             </div>
           </div>
         )}

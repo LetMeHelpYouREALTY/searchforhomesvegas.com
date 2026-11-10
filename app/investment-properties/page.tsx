@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import { Phone, TrendingUp, DollarSign, Building, BarChart, CheckCircle, Calculator } from "lucide-react";
 import type { Metadata } from "next";
@@ -82,9 +82,12 @@ export default function InvestmentPropertiesPage() {
             <p className="text-xl text-slate-600">
               No state income tax, strong appreciation, and excellent rental yields. Discover why
               investors choose Las Vegas—with guidance from{" "}
-              <strong>Berkshire Hathaway HomeServices</strong>.
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>.
             </p>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Why Las Vegas */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -389,7 +392,7 @@ export default function InvestmentPropertiesPage() {
               </div>
               <p className="text-slate-600 text-sm">
                 Dr. Jan works with qualified intermediaries and can help identify replacement properties
-                within the 45-day window. Berkshire Hathaway's nationwide network is invaluable for
+                within the 45-day window. No HOA Las Vegas's nationwide network is invaluable for
                 clients exchanging into or out of Las Vegas.
               </p>
             </div>
@@ -412,7 +415,7 @@ export default function InvestmentPropertiesPage() {
                 },
                 {
                   q: "Can you help with 1031 exchanges?",
-                  a: "Absolutely. Dr. Jan works with qualified intermediaries and can help identify replacement properties within the 45-day identification window. Berkshire Hathaway's nationwide network is particularly valuable for exchanging into or out of Las Vegas.",
+                  a: "Absolutely. Dr. Jan works with qualified intermediaries and can help identify replacement properties within the 45-day identification window. No HOA Las Vegas's nationwide network is particularly valuable for exchanging into or out of Las Vegas.",
                 },
                 {
                   q: "What's the best area for investment properties?",
@@ -434,7 +437,7 @@ export default function InvestmentPropertiesPage() {
             </h2>
             <p className="text-xl text-slate-300 mb-8">
               Get expert guidance on Las Vegas investment properties from Dr. Jan Duffy and
-              Berkshire Hathaway HomeServices.
+              No HOA Las Vegas Homes.
             </p>
             <a
               href="tel:+17025001955"
@@ -452,7 +455,6 @@ export default function InvestmentPropertiesPage() {
         {/* Last Updated */}
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

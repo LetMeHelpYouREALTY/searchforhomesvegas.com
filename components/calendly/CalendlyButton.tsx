@@ -1,6 +1,6 @@
 "use client";
 
-import Script from "next/script";
+import { CALENDLY } from "@/lib/calendly";
 import "./types";
 
 interface CalendlyButtonProps {
@@ -10,36 +10,27 @@ interface CalendlyButtonProps {
   children?: React.ReactNode;
 }
 
+/**
+ * Opens Calendly popup. Requires global Calendly script in root layout.
+ */
 export default function CalendlyButton({
-  url = "https://calendly.com/drjanduffy/appointment",
-  text = "Schedule time with me",
-  className = "inline-flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition-colors",
+  url = CALENDLY.buyerConsultation,
+  text = "Schedule with Dr. Jan",
+  className = "inline-flex items-center justify-center bg-bronze text-ink px-6 py-3 font-semibold tracking-wide hover:bg-bronze-soft transition-colors no-underline",
   children,
 }: CalendlyButtonProps) {
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (window.Calendly) {
+    if (typeof window !== "undefined" && window.Calendly) {
       window.Calendly.initPopupWidget({ url });
+      return;
     }
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <>
-      <link
-        href="https://assets.calendly.com/assets/external/widget.css"
-        rel="stylesheet"
-      />
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="lazyOnload"
-      />
-      <a
-        href=""
-        onClick={handleClick}
-        className={className}
-      >
-        {children || text}
-      </a>
-    </>
+    <a href={url} onClick={handleClick} className={className} role="button">
+      {children || text}
+    </a>
   );
 }

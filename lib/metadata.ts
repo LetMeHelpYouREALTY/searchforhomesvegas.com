@@ -58,12 +58,27 @@ export function rootLayoutMetadata(pathname: string): Metadata {
     title,
     description: SITE_ANGLE.description,
     keywords: [...SITE_ANGLE.keywords],
+    icons: {
+      icon: [
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon.png", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    },
     alternates: { canonical },
     openGraph: {
       title: isHome ? SITE_ANGLE.title : SITE_ANGLE.h1,
       description: SITE_ANGLE.description,
       type: "website",
       url: canonical,
+      images: [
+        {
+          url: "/images/agent/dr-jan-duffy.png",
+          width: 180,
+          height: 180,
+          alt: "Dr. Jan Duffy, Las Vegas REALTOR®",
+        },
+      ],
     },
   };
 }

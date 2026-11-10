@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -22,7 +22,7 @@ import { withPageCanonical } from "@/lib/metadata";
 export const metadata: Metadata = withPageCanonical("/buyers/first-time-buyers", {
   title: "First-Time Home Buyers Las Vegas",
   description:
-    "First-time buyer in Las Vegas? Down payment assistance, builder incentives, and expert guidance from Dr. Jan Duffy at Berkshire Hathaway HomeServices. Call (702) 500-1955.",
+    "First-time buyer in Las Vegas? Down payment assistance, builder incentives, and expert guidance from Dr. Jan Duffy at No HOA Las Vegas Homes. Call (702) 500-1955.",
   keywords: [
     "first time home buyer Las Vegas",
     "first time buyer Nevada",
@@ -114,6 +114,9 @@ export default function FirstTimeBuyersPage() {
               Let's Make Homeownership Happen → (702) 500-1955
             </a>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Financing Options */}
           <section className="mb-16 max-w-5xl mx-auto">
@@ -485,7 +488,7 @@ export default function FirstTimeBuyersPage() {
                 "Buying your first home is exciting AND overwhelming. My job is to make it less
                 overwhelming. I walk first-time buyers through every step, explain everything in
                 plain English, and make sure you're confident in your decision. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent, I have resources and
+                <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent, I have resources and
                 connections that independent agents simply don't have."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
@@ -525,7 +528,6 @@ export default function FirstTimeBuyersPage() {
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import { Phone, Shield, Star, Mountain, Home as HomeIcon } from "lucide-react";
 import type { Metadata } from "next";
@@ -89,9 +89,12 @@ export default function TheRidgesPage() {
             </h1>
             <p className="text-xl text-slate-600">
               Las Vegas's most prestigious address. Experience The Ridges luxury with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> and Dr. Jan Duffy.
             </p>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Market Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -129,7 +132,7 @@ export default function TheRidgesPage() {
                 within Summerlin along the foothills of Red Rock Canyon, this ultra-exclusive guard-gated
                 community offers estate-quality homes with panoramic views of the Las Vegas Strip, the
                 surrounding mountains, and the pristine desert landscape. When the most discerning buyers
-                search for Las Vegas luxury, they turn to <strong>Berkshire Hathaway HomeServices</strong>—the
+                search for Las Vegas luxury, they turn to <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>—the
                 brand that matches The Ridges' standard of excellence.
               </p>
               <p>
@@ -291,12 +294,12 @@ export default function TheRidgesPage() {
                 million for the most spectacular custom estates.
               </p>
               <p>
-                Working with <strong>Berkshire Hathaway HomeServices</strong> in The Ridges means working
+                Working with <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> in The Ridges means working
                 with agents who understand that luxury isn't just about price—it's about lifestyle,
                 privacy, and attention to detail. Dr. Jan Duffy provides the white-glove service that
                 Ridges buyers and sellers expect, from confidential off-market transactions to coordination
                 with architects, designers, and property managers. When the stakes are measured in millions,
-                the Berkshire Hathaway name provides the trust and expertise that matters.
+                the No HOA Las Vegas name provides the trust and expertise that matters.
               </p>
             </div>
           </section>
@@ -305,7 +308,7 @@ export default function TheRidgesPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "The Ridges attracts clients who expect the very best—and they recognize Berkshire Hathaway
+                "The Ridges attracts clients who expect the very best—and they recognize No HOA Las Vegas
                 HomeServices as a brand that matches their standards. In luxury real estate, discretion and
                 trust are everything. My clients know their privacy is protected and their interests come first.
                 That's the difference in high-end transactions."
@@ -388,7 +391,6 @@ export default function TheRidgesPage() {
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

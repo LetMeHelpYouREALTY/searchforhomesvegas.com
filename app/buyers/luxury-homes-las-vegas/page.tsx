@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -28,7 +28,7 @@ export const metadata: Metadata = withPageCanonical("/buyers/luxury-homes-las-ve
     "MacDonald Highlands",
     "luxury real estate Henderson",
     "guard gated communities Las Vegas",
-    "Berkshire Hathaway luxury homes",
+    "No HOA Las Vegas luxury homes",
   ],
 });
 
@@ -104,6 +104,9 @@ export default function LuxuryHomesPage() {
               Schedule a Private Preview → (702) 500-1955
             </a>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Market Performance */}
           <section className="mb-16 bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -328,7 +331,7 @@ export default function LuxuryHomesPage() {
               <div>
                 <p className="text-slate-700 mb-4">
                   Luxury transactions require a level of discretion that most agents can't provide.
-                  Dr. Jan Duffy and <strong>Berkshire Hathaway HomeServices</strong> understand that
+                  Dr. Jan Duffy and <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> understand that
                   privacy isn't a luxury—it's a requirement.
                 </p>
                 <ul className="space-y-3">
@@ -372,7 +375,7 @@ export default function LuxuryHomesPage() {
                 "Luxury buyers expect discretion, market expertise, and flawless execution. In this
                 price range, one wrong move can cost hundreds of thousands of dollars. My clients
                 trust me because I've closed $127M+ in transactions and understand that their time
-                and privacy are worth more than any commission. <strong>Berkshire Hathaway HomeServices</strong>
+                and privacy are worth more than any commission. <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>
                 provides the global resources and credibility that luxury transactions demand."
               </blockquote>
               <cite className="text-slate-300 font-semibold">
@@ -412,7 +415,6 @@ export default function LuxuryHomesPage() {
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

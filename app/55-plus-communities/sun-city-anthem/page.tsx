@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -31,7 +31,7 @@ export const metadata: Metadata = withPageCanonical("/55-plus-communities/sun-ci
     "Sun City Anthem Henderson",
     "55 plus communities Henderson",
     "active adult Henderson",
-    "Berkshire Hathaway Sun City Anthem",
+    "No HOA Las Vegas Sun City Anthem",
   ],
 });
 
@@ -132,6 +132,9 @@ export default function SunCityAnthemPage() {
             </p>
           </div>
 
+          <RealScoutListings />
+
+
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-center">
@@ -176,7 +179,7 @@ export default function SunCityAnthemPage() {
                 the adjacent Revere Golf Club—provide world-class golf experiences.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices</strong> agents know Sun City Anthem intimately.
+                <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agents know Sun City Anthem intimately.
                 Dr. Jan Duffy helps buyers understand the community's various phases, elevation differences,
                 and which neighborhoods offer the best mountain or Strip views.
               </p>
@@ -304,7 +307,7 @@ export default function SunCityAnthemPage() {
                 "Sun City Anthem combines everything Henderson is known for—safety, quality, and
                 stunning scenery—with the Del Webb lifestyle. The views from the upper sections
                 are spectacular, and the Anthem Center rivals any resort clubhouse I've seen.
-                As a <strong>Berkshire Hathaway HomeServices</strong> agent, I help buyers find
+                As a <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent, I help buyers find
                 the right balance of views, price, and proximity to amenities."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
@@ -341,7 +344,6 @@ export default function SunCityAnthemPage() {
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

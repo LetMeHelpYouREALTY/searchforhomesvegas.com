@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import CalendlyWidget from "@/components/calendly/CalendlyWidget";
 import Link from "next/link";
 import { Phone, CheckCircle, Home, TrendingUp, MapPin, Calculator, Clock, DollarSign } from "lucide-react";
@@ -10,13 +10,13 @@ import { withPageCanonical } from "@/lib/metadata";
 export const metadata: Metadata = withPageCanonical("/home-valuation", {
   title: "Free Home Valuation Las Vegas | What's Your Home Worth?",
   description:
-    "Get a free, accurate home valuation in Las Vegas from Dr. Jan Duffy at Berkshire Hathaway HomeServices. Expert CMA analysis for Summerlin, Henderson, Green Valley & all Las Vegas neighborhoods. Call (702) 500-1955.",
+    "Get a free, accurate home valuation in Las Vegas from Dr. Jan Duffy at No HOA Las Vegas Homes. Expert CMA analysis for Summerlin, Henderson, Green Valley & all Las Vegas neighborhoods. Call (702) 500-1955.",
   keywords: [
     "home valuation Las Vegas",
     "what is my home worth Las Vegas",
     "free home value estimate",
     "CMA Las Vegas",
-    "Berkshire Hathaway home valuation",
+    "No HOA Las Vegas home valuation",
     "Summerlin home value",
     "Henderson home value",
   ],
@@ -93,10 +93,13 @@ export default function HomeValuationPage() {
             </h1>
             <p className="text-xl text-slate-600">
               Get a free, no-obligation home valuation from Dr. Jan Duffy at{" "}
-              <strong>Berkshire Hathaway HomeServices</strong>. Accurate pricing backed by 17+ years
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>. Accurate pricing backed by 17+ years
               of Las Vegas market expertise and $127M+ in closed transactions.
             </p>
           </div>
+
+          <RealScoutListings />
+
 
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
             {/* Calendly Widget */}
@@ -109,7 +112,7 @@ export default function HomeValuationPage() {
               </div>
               <CalendlyWidget url="showing" height="650px" />
               <p className="text-xs text-slate-500 text-center p-4 border-t border-slate-200">
-                No obligation. No pressure. Just accurate information from Berkshire Hathaway
+                No obligation. No pressure. Just accurate information from No HOA Las Vegas
                 HomeServices.
               </p>
             </div>
@@ -203,7 +206,7 @@ export default function HomeValuationPage() {
                 your home or understand the nuances of the Las Vegas market.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices</strong> agents like Dr. Jan Duffy provide
+                <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agents like Dr. Jan Duffy provide
                 something these algorithms cannot: local expertise combined with a detailed
                 understanding of what makes your specific home valuable. A professional Comparative
                 Market Analysis (CMA) considers factors that online tools miss entirely.
@@ -463,7 +466,7 @@ export default function HomeValuationPage() {
               Ready to Know What Your Home Is Worth?
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Get a free, no-obligation home valuation from Dr. Jan Duffy and Berkshire Hathaway
+              Get a free, no-obligation home valuation from Dr. Jan Duffy and No HOA Las Vegas
               HomeServices Nevada Properties. Accurate pricing. Expert guidance. Zero pressure.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -490,7 +493,6 @@ export default function HomeValuationPage() {
         {/* Last Updated */}
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -27,7 +27,7 @@ export const metadata: Metadata = withPageCanonical("/55-plus-communities/trilog
     "luxury 55+ community Las Vegas",
     "resort style 55+ Las Vegas",
     "Shea Homes Trilogy",
-    "Berkshire Hathaway Trilogy Summerlin",
+    "No HOA Las Vegas Trilogy Summerlin",
   ],
   openGraph: {
     title: "Trilogy at Summerlin - Luxury Resort 55+ Living",
@@ -95,6 +95,9 @@ export default function TrilogySummerlinPage() {
               dining, world-class spa, and contemporary homes.
             </p>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -379,7 +382,7 @@ export default function TrilogySummerlinPage() {
                 community—they want a lifestyle. The on-site restaurant, spa, and
                 contemporary homes create an experience you simply can't find
                 elsewhere. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent serving
+                <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent serving
                 luxury 55+ buyers, I recommend Trilogy to those who appreciate
                 quality and won't settle for ordinary."
               </blockquote>
@@ -425,7 +428,6 @@ export default function TrilogySummerlinPage() {
           Last Updated: January 2026
         </div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

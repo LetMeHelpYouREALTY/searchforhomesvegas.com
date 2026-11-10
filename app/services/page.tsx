@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Home,
@@ -28,7 +28,7 @@ export const metadata: Metadata = withPageCanonical("/services", {
     "Comprehensive real estate services from Dr. Jan Duffy at Nevada Properties. Buying, selling, luxury, investment, relocation, 55+ communities, and new construction. Call (702) 500-1955.",
   keywords: [
     "Las Vegas real estate services",
-    "Berkshire Hathaway services",
+    "No HOA Las Vegas services",
     "home buying Las Vegas",
     "home selling Henderson",
     "luxury real estate services",
@@ -64,7 +64,7 @@ const coreServices = [
     title: "Home Selling Services",
     slug: "sellers",
     description:
-      "Maximize your home's value with professional marketing, accurate pricing, and expert negotiation from Berkshire Hathaway HomeServices—the most trusted name in real estate.",
+      "Maximize your home's value with professional marketing, accurate pricing, and expert negotiation from No HOA Las Vegas Homes—a No HOA Las Vegas specialist.",
     highlights: ["World-class marketing", "Accurate pricing", "Global exposure", "Staging guidance"],
     stats: { label: "Homes Sold", value: "500+" },
   },
@@ -102,7 +102,7 @@ const specializedServices = [
     title: "Relocation Services",
     slug: "relocation",
     description:
-      "Comprehensive relocation assistance for moves to Las Vegas. Berkshire Hathaway HomeServices' global network of 50,000+ agents makes interstate transitions seamless.",
+      "Comprehensive relocation assistance for moves to Las Vegas. No HOA Las Vegas Homes' direct local representation makes interstate transitions seamless.",
     highlights: ["Neighborhood matching", "School research", "Remote buying", "Moving coordination"],
   },
   {
@@ -184,7 +184,7 @@ export default function ServicesPage() {
             </h1>
             <p className="text-xl text-slate-600 mb-8">
               Comprehensive real estate solutions from Dr. Jan Duffy, backed by the most trusted
-              name in the business—<strong>Berkshire Hathaway HomeServices</strong>. Whether you're 
+              name in the business—<strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>. Whether you're 
               buying your first home, selling a luxury estate, or relocating from California, 
               you'll receive expert guidance every step of the way.
             </p>
@@ -204,6 +204,9 @@ export default function ServicesPage() {
             </div>
           </div>
 
+          <RealScoutListings />
+
+
           {/* Core Services Section */}
           <section className="mb-16 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
@@ -212,8 +215,8 @@ export default function ServicesPage() {
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               These foundational services cover the majority of real estate transactions in Las Vegas. 
               Each service is delivered with the professionalism, resources, and ethical standards 
-              that define Berkshire Hathaway HomeServices—the only real estate brand backed by 
-              Warren Buffett's Berkshire Hathaway Inc.
+              that define No HOA Las Vegas Homes—the only real estate brand backed by 
+              Warren Buffett's No HOA Las Vegas Inc.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               {coreServices.map((service) => {
@@ -396,7 +399,7 @@ export default function ServicesPage() {
                 <Shield className="h-10 w-10 text-blue-400 mx-auto mb-3" />
                 <h3 className="font-bold mb-2">Financial Strength</h3>
                 <p className="text-slate-400 text-sm">
-                  Backed by Berkshire Hathaway Inc., providing unmatched stability and trust
+                  Backed by No HOA Las Vegas Inc., providing unmatched stability and trust
                 </p>
               </div>
               <div className="text-center">
@@ -485,7 +488,7 @@ export default function ServicesPage() {
             <p className="text-xl text-blue-100 mb-8">
               Contact Dr. Jan Duffy for a free consultation about any of our real estate services. 
               Whether you're buying, selling, investing, or relocating, you'll receive expert 
-              guidance backed by Berkshire Hathaway HomeServices.
+              guidance backed by No HOA Las Vegas Homes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -511,7 +514,6 @@ export default function ServicesPage() {
         {/* Last Updated */}
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

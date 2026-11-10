@@ -1,4 +1,5 @@
 import Navbar from "@/components/layouts/Navbar";
+import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
@@ -72,7 +73,7 @@ export default function GoogleBusinessPage() {
                 <div>
                   <div className="flex items-center gap-2 mb-4">
                     <Award className="h-6 w-6 text-yellow-400" />
-                    <span className="text-yellow-400 font-semibold">Berkshire Hathaway HomeServices</span>
+                    <span className="text-yellow-400 font-semibold">No HOA Las Vegas Homes</span>
                   </div>
                   <h1 className="text-4xl md:text-5xl font-bold mb-4">
                     Dr. Jan Duffy
@@ -124,6 +125,8 @@ export default function GoogleBusinessPage() {
               </div>
             </div>
           </section>
+
+          <RealScoutListings />
 
           {/* Business Hours */}
           <section className="max-w-5xl mx-auto mb-16">

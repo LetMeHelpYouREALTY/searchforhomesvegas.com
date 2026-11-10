@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -65,6 +65,9 @@ export default function MoveUpSellerPage() {
               Start Your Upgrade → (702) 500-1955
             </a>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Equity Section */}
           <section className="mb-16 bg-green-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -216,7 +219,7 @@ export default function MoveUpSellerPage() {
               <p>
                 The biggest concern move-up buyers have is timing. What happens if you sell before
                 finding your next home? What if you find your dream home but can't sell in time?
-                <strong> Berkshire Hathaway HomeServices</strong> agents like Dr. Jan Duffy have
+                <strong> No HOA Las Vegas Homes</strong> agents like Dr. Jan Duffy have
                 strategies for every scenario, ensuring you never end up homeless or paying two
                 mortgages unnecessarily.
               </p>
@@ -329,7 +332,7 @@ export default function MoveUpSellerPage() {
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Move-up transactions are like a chess game—every move matters. I coordinate both
                 sides so you don't end up homeless or paying two mortgages. With{" "}
-                <strong>Berkshire Hathaway HomeServices</strong>, I have the resources to make
+                <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>, I have the resources to make
                 complex transactions smooth. That's why clients trust me with their biggest
                 financial moves."
               </blockquote>
@@ -403,7 +406,6 @@ export default function MoveUpSellerPage() {
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -23,7 +23,7 @@ export const metadata: Metadata = withPageCanonical("/55-plus-communities/del-we
     "Lake Las Vegas 55 plus",
     "Del Webb homes Henderson",
     "lakefront retirement community",
-    "Berkshire Hathaway Del Webb",
+    "No HOA Las Vegas Del Webb",
   ],
 });
 
@@ -57,6 +57,9 @@ export default function DelWebbLakeLasVegasPage() {
               Modern homes. Lake views. Resort living. The newest Del Webb in Las Vegas.
             </p>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -249,7 +252,7 @@ export default function DelWebbLakeLasVegasPage() {
                 "Del Webb at Lake Las Vegas offers something no other 55+ community can—lakefront
                 living in the desert. The homes are modern, the setting is spectacular, and the
                 Del Webb programming creates instant community. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent, I help buyers understand
+                <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent, I help buyers understand
                 which lots offer the best views and which floor plans work for their lifestyle."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
@@ -286,7 +289,6 @@ export default function DelWebbLakeLasVegasPage() {
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

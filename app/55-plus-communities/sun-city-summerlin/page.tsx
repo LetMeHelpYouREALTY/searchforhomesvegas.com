@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -26,7 +26,7 @@ export const metadata: Metadata = withPageCanonical("/55-plus-communities/sun-ci
     "Sun City Summerlin Las Vegas",
     "55 plus communities Summerlin",
     "retirement community Las Vegas",
-    "Berkshire Hathaway Sun City",
+    "No HOA Las Vegas Sun City",
   ],
 });
 
@@ -82,6 +82,9 @@ export default function SunCitySummerlinPage() {
               7,700+ homes. 3 golf courses. 4 recreation centers. The gold standard of active adult living.
             </p>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -273,7 +276,7 @@ export default function SunCitySummerlinPage() {
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Sun City Summerlin offers the best value in Las Vegas 55+ living. Where else can
                 you get three golf courses, four rec centers, and 100+ clubs for under $200/month?
-                As a <strong>Berkshire Hathaway HomeServices</strong> agent, I help buyers navigate
+                As a <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent, I help buyers navigate
                 the community's various neighborhoods to find the perfect fit—whether they want
                 golf course views, mountain views, or proximity to their favorite rec center."
               </blockquote>
@@ -311,7 +314,6 @@ export default function SunCitySummerlinPage() {
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

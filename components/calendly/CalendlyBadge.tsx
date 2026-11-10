@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import Script from "next/script";
+import { CALENDLY } from "@/lib/calendly";
 import "./types";
 
 interface CalendlyBadgeProps {
@@ -12,15 +12,17 @@ interface CalendlyBadgeProps {
   branding?: boolean;
 }
 
+/**
+ * Floating schedule badge. Script must load once in root layout.
+ */
 export default function CalendlyBadge({
-  url = "https://calendly.com/drjanduffy/showing",
-  text = "Schedule time with me",
-  color = "#0069ff",
-  textColor = "#ffffff",
-  branding = true,
+  url = CALENDLY.buyerConsultation,
+  text = "Schedule with Dr. Jan",
+  color = "#b8956c",
+  textColor = "#0c0f14",
+  branding = false,
 }: CalendlyBadgeProps) {
   useEffect(() => {
-    // Initialize badge widget when Calendly script is loaded
     const initBadge = () => {
       if (window.Calendly) {
         window.Calendly.initBadgeWidget({
@@ -33,40 +35,24 @@ export default function CalendlyBadge({
       }
     };
 
-    // Check if Calendly is already loaded
     if (window.Calendly) {
       initBadge();
-    } else {
-      // Wait for script to load
-      window.addEventListener("calendly-loaded", initBadge);
+      return;
     }
 
+    const id = window.setInterval(() => {
+      if (window.Calendly) {
+        window.clearInterval(id);
+        initBadge();
+      }
+    }, 200);
+
+    const timeout = window.setTimeout(() => window.clearInterval(id), 10000);
     return () => {
-      window.removeEventListener("calendly-loaded", initBadge);
+      window.clearInterval(id);
+      window.clearTimeout(timeout);
     };
   }, [url, text, color, textColor, branding]);
 
-  return (
-    <>
-      <link
-        href="https://assets.calendly.com/assets/external/widget.css"
-        rel="stylesheet"
-      />
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="lazyOnload"
-        onLoad={() => {
-          if (window.Calendly) {
-            window.Calendly.initBadgeWidget({
-              url,
-              text,
-              color,
-              textColor,
-              branding,
-            });
-          }
-        }}
-      />
-    </>
-  );
+  return null;
 }

@@ -111,16 +111,24 @@ export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
 export const DEFAULT_CONFIG: DomainConfig = {
   domain: "default",
   neighborhood: "Las Vegas",
-  tagline: "Las Vegas Homes for Sale",
-  description: "Search Las Vegas homes for sale. Expert real estate guidance from Dr. Jan Duffy, BHHS Nevada Properties.",
-  heroHeadline: "Las Vegas Homes for Sale",
-  heroSubheadline: "Expert real estate guidance from Dr. Jan Duffy — 30+ years, 500+ families helped.",
-  keywords: ["Las Vegas homes for sale", "Las Vegas real estate", "Dr Jan Duffy"],
+  tagline: "No HOA Las Vegas Homes by Dr Jan Duffy",
+  description:
+    "No HOA Las Vegas Homes by Dr Jan Duffy — map search for non-HOA inventory across Las Vegas, Henderson, and North Las Vegas.",
+  heroHeadline: "Las Vegas Homes for Sale with No HOA",
+  heroSubheadline:
+    "Skip HOA dues and rules — rural-preservation areas and older non-HOA neighborhoods across the valley.",
+  keywords: [
+    "no HOA homes Las Vegas",
+    "Las Vegas homes with no HOA",
+    "non-HOA Las Vegas real estate",
+    "Dr Jan Duffy",
+  ],
   pageType: "search",
   realscoutAgentId: REALSCOUT_AGENT_ID,
-  ctaBadge: "Las Vegas Expert",
-  ctaHeadline: "Find Your Las Vegas Home",
-  ctaSubheadline: "Call or text Dr. Jan at 702-500-1955 — I answer my own phone.",
+  ctaBadge: "No HOA Specialist",
+  ctaHeadline: "Search Non-HOA Las Vegas Homes",
+  ctaSubheadline:
+    "Tell me what you want — acreage, RV parking, horse property — and I'll match listings on the map.",
 };
 
 const SINGLE_SITE_DOMAIN = "searchforhomesvegas.com";

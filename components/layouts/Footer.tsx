@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Calendar } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
+import AgentPortrait from "@/components/agent/AgentPortrait";
+import CalendlyButton from "@/components/calendly/CalendlyButton";
+import { CALENDLY } from "@/lib/calendly";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,10 +14,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div>
-            <h3 className="font-bold text-xl mb-4">Berkshire Hathaway HomeServices</h3>
+            <div className="mb-4">
+              <AgentPortrait size="md" />
+            </div>
+            <h3 className="font-display text-xl mb-1 text-white">{siteConfig.logoPrimary}</h3>
+            <p className="text-[11px] uppercase tracking-[0.16em] text-bronze-soft mb-4">
+              {siteConfig.logoSecondary}
+            </p>
             <p className="text-slate-300 mb-4 text-sm">
-              Nevada Properties - Your trusted real estate partner in Las Vegas, Henderson, and
-              Summerlin. Backed by Warren Buffett's legacy of trust.
+              Berkshire Hathaway HomeServices Nevada Properties — your partner for non-HOA homes
+              across Las Vegas, Henderson, and Summerlin.
             </p>
             <div className="flex space-x-4">
               <a
@@ -203,6 +213,15 @@ export default function Footer() {
                 >
                   Homes@HeyBerkshire.com
                 </Link>
+              </li>
+              <li>
+                <CalendlyButton
+                  url={CALENDLY.buyerConsultation}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-bronze-soft hover:text-white no-underline"
+                >
+                  <Calendar className="h-4 w-4" />
+                  Schedule online
+                </CalendlyButton>
               </li>
             </ul>
           </div>

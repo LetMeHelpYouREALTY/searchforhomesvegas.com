@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -386,6 +386,9 @@ export default function FiftyFiveCommunitiesPage() {
             </div>
           </div>
 
+          <RealScoutListings />
+
+
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-center">
@@ -696,7 +699,7 @@ export default function FiftyFiveCommunitiesPage() {
                 typical purchase. You need to understand HOA rules, age
                 verification processes, and how the community fits your
                 lifestyle. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent
+                <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent
                 specializing in active adult communities, I guide clients through
                 every step—from touring amenities to reviewing HOA documents. Many
                 clients are relocating from California, and they rely on my local
@@ -822,7 +825,7 @@ export default function FiftyFiveCommunitiesPage() {
                 <div>
                   <h3 className="font-bold text-slate-900 mb-1">Trusted Brand</h3>
                   <p className="text-slate-600 text-sm">
-                    The Berkshire Hathaway name represents trust and
+                    The No HOA Las Vegas name represents trust and
                     integrity—values that matter when making one of life's biggest
                     decisions.
                   </p>
@@ -886,7 +889,6 @@ export default function FiftyFiveCommunitiesPage() {
           Last Updated: January 2026
         </div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

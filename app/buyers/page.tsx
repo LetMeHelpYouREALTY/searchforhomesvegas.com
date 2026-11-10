@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -28,7 +28,7 @@ export const metadata: Metadata = withPageCanonical("/buyers", {
   keywords: [
     "buy home Las Vegas",
     "Las Vegas home buyer",
-    "Berkshire Hathaway buyer agent",
+    "No HOA Las Vegas buyer agent",
     "Henderson homes for sale",
     "first time home buyer Las Vegas",
     "California relocation Las Vegas",
@@ -110,8 +110,8 @@ export default function BuyersPage() {
               Buy Your Las Vegas Home with Confidence
             </h1>
             <p className="text-xl text-slate-600 mb-8">
-              When you work with a <strong>Berkshire Hathaway HomeServices</strong> buyer's agent,
-              you're backed by the most trusted name in real estate—and it costs you nothing.
+              When you work with a <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> buyer's agent,
+              you're focused on non-HOA inventory and map-first search—and it costs you nothing.
               The seller pays the commission, but the representation is yours.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-500">
@@ -121,6 +121,9 @@ export default function BuyersPage() {
             </div>
           </div>
 
+          <RealScoutListings />
+
+
           {/* Value Prop */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -129,7 +132,7 @@ export default function BuyersPage() {
                 <p className="text-slate-300 mb-6">
                   Here's what many buyers don't know: having your own agent costs you nothing. The
                   seller pays the commission, but the representation is yours.{" "}
-                  <strong>Berkshire Hathaway HomeServices</strong> agents protect your interests,
+                  <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agents protect your interests,
                   not the seller's. In a competitive market like Las Vegas, having expert 
                   representation can mean the difference between winning your dream home and losing out.
                 </p>
@@ -172,7 +175,7 @@ export default function BuyersPage() {
               Buying a home is one of the most significant financial decisions you'll make. 
               Understanding the process helps reduce stress and ensures you're prepared at each 
               step. Here's what to expect when purchasing a home in Las Vegas with Dr. Jan Duffy 
-              and Berkshire Hathaway HomeServices.
+              and No HOA Las Vegas Homes.
             </p>
             <div className="space-y-6">
               {buyingSteps.map((step, index) => {
@@ -297,12 +300,12 @@ export default function BuyersPage() {
           {/* Why */}
           <section className="mb-16 max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Why Buy with Berkshire Hathaway HomeServices
+              Why Buy with No HOA Las Vegas Homes
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              Not all real estate agents are created equal. When you choose a Berkshire Hathaway 
+              Not all real estate agents are created equal. When you choose a No HOA Las Vegas 
               HomeServices agent, you're choosing the only real estate brand backed by Warren 
-              Buffett's Berkshire Hathaway Inc.—a name synonymous with trust, ethical standards, 
+              Buffett's No HOA Las Vegas Inc.—a name synonymous with trust, ethical standards, 
               and financial strength.
             </p>
             <div className="grid md:grid-cols-4 gap-6">
@@ -312,7 +315,7 @@ export default function BuyersPage() {
                 </div>
                 <h3 className="font-bold text-slate-900 mb-2">Trusted Brand</h3>
                 <p className="text-slate-600 text-sm">
-                  The only real estate brand backed by Berkshire Hathaway Inc.
+                  The only real estate brand backed by No HOA Las Vegas Inc.
                 </p>
               </div>
               <div className="text-center">
@@ -415,7 +418,7 @@ export default function BuyersPage() {
                 },
                 {
                   q: "What if I'm relocating from another state?",
-                  a: "Berkshire Hathaway's global network of 50,000+ agents makes relocations seamless. Dr. Jan can coordinate with agents in your current city while helping you find the perfect Las Vegas home remotely through virtual tours and video calls.",
+                  a: "No HOA Las Vegas's direct local representation makes relocations seamless. Dr. Jan can coordinate with agents in your current city while helping you find the perfect Las Vegas home remotely through virtual tours and video calls.",
                 },
                 {
                   q: "How competitive is the Las Vegas housing market?",
@@ -439,7 +442,7 @@ export default function BuyersPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Find Your Las Vegas Home?</h2>
             <p className="text-xl text-slate-300 mb-8">
               Questions about buying in Las Vegas? Call or text Dr. Jan Duffy for a free buyer
-              consultation. Get expert guidance backed by Berkshire Hathaway HomeServices—the 
+              consultation. Get expert guidance backed by No HOA Las Vegas Homes—the 
               seller pays the commission, so representation is free for you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -466,7 +469,6 @@ export default function BuyersPage() {
         {/* Last Updated */}
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

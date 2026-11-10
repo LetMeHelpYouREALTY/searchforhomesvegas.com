@@ -11,10 +11,10 @@ export default function GlobalHeroBanner() {
 
   return (
     <aside
-      className="relative w-full overflow-hidden border-b border-slate-800/40"
+      className="relative w-full overflow-hidden border-b border-ink/30"
       aria-label={tagline}
     >
-      <div className="relative h-[200px] sm:h-[240px] md:h-[280px] w-full">
+      <div className="relative h-[180px] sm:h-[220px] md:h-[260px] w-full">
         <Image
           src={src}
           alt={alt}
@@ -26,18 +26,18 @@ export default function GlobalHeroBanner() {
           className="object-cover object-center"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/45 to-slate-950/25"
+          className="absolute inset-0 bg-gradient-to-r from-ink/80 via-ink/45 to-ink/20"
           aria-hidden="true"
         />
         <div className="relative z-10 flex h-full items-end">
           <div className="container mx-auto px-4 pb-5 md:pb-6">
-            <p className="text-lg sm:text-xl md:text-2xl font-semibold text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.7)] max-w-3xl text-balance">
+            <p className="font-display text-xl sm:text-2xl md:text-3xl text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.7)] max-w-3xl text-balance">
               {tagline}
             </p>
             {phoneDisplay && phoneTel && (
               <a
                 href={phoneTel}
-                className="mt-2 inline-block text-sm sm:text-base font-medium text-blue-100 hover:text-white underline-offset-2 hover:underline [text-shadow:0_1px_6px_rgba(0,0,0,0.6)]"
+                className="mt-2 inline-block text-sm sm:text-base font-medium text-bronze-soft hover:text-white underline-offset-2 hover:underline [text-shadow:0_1px_6px_rgba(0,0,0,0.6)] no-underline"
               >
                 Call or text {phoneDisplay}
               </a>

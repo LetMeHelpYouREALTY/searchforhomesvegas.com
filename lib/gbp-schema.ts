@@ -4,6 +4,7 @@
 export const businessInfo = {
   // NAP - Must match GBP exactly
   name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
+  alternateName: "No HOA Las Vegas Homes by Dr Jan Duffy",
   address: {
     streetAddress: "9406 W Lake Mead Blvd, Suite 100",
     addressLocality: "Las Vegas",
@@ -63,9 +64,17 @@ export const businessInfo = {
   // Services - Each creates searchable fields in GBP
   services: [
     // Core Services
+    {
+      name: "No HOA Home Buyer Representation",
+      description: "Map-first search for Las Vegas homes without a homeowners association",
+    },
     { name: "Buyer Representation", description: "Full-service home buying assistance" },
     { name: "Seller Representation", description: "List and sell your home for top dollar" },
     { name: "Luxury Home Sales", description: "High-end properties $1M+" },
+    {
+      name: "Luxury Non-HOA Estate Search",
+      description: "Custom and acreage luxury homes outside master-planned HOAs",
+    },
     // Niche Services (trigger intent phrases)
     { name: "California Relocation Services", description: "Helping CA buyers transition to Las Vegas" },
     { name: "55+ Community Specialist", description: "Sun City, Anthem, Del Webb communities" },

@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import { 
   Phone, 
@@ -29,7 +29,7 @@ export const metadata: Metadata = withPageCanonical("/luxury-homes", {
     "The Ridges Las Vegas",
     "Summerlin luxury real estate",
     "Southern Highlands homes",
-    "Berkshire Hathaway luxury",
+    "No HOA Las Vegas luxury",
     "million dollar homes Las Vegas",
     "MacDonald Highlands Henderson",
     "luxury real estate agent Las Vegas",
@@ -133,7 +133,7 @@ export default function LuxuryHomesPage() {
               Las Vegas Luxury Real Estate
             </h1>
             <p className="text-xl text-slate-600 mb-8">
-              <strong>Berkshire Hathaway HomeServices</strong> represents the gold standard in
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> represents the gold standard in
               luxury real estate. When you're buying or selling a $1M+ home, trust matters more than
               ever. Our global network, discretion, and expertise ensure your luxury transaction 
               receives the exceptional service it deserves.
@@ -144,6 +144,9 @@ export default function LuxuryHomesPage() {
               <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Discrete Transactions</span>
             </div>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Luxury Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -178,7 +181,7 @@ export default function LuxuryHomesPage() {
           {/* Why for Luxury */}
           <section className="mb-16 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Why Choose Berkshire Hathaway for Luxury Real Estate
+              Why Choose No HOA Las Vegas for Luxury Real Estate
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               In luxury real estate, the agent you choose can impact both the sale price and 
@@ -190,7 +193,7 @@ export default function LuxuryHomesPage() {
                 {
                   icon: Shield,
                   title: "Trusted Brand",
-                  desc: "The Berkshire Hathaway name commands respect and attracts serious, qualified buyers to your property",
+                  desc: "The No HOA Las Vegas name commands respect and attracts serious, qualified buyers to your property",
                 },
                 {
                   icon: Globe,
@@ -294,7 +297,7 @@ export default function LuxuryHomesPage() {
             <p className="text-blue-100 text-center max-w-3xl mx-auto mb-8">
               Selling a luxury home requires more than just an MLS listing. Dr. Jan Duffy provides 
               comprehensive marketing services that showcase your property to qualified buyers 
-              worldwide through Berkshire Hathaway HomeServices' premium marketing channels.
+              worldwide through No HOA Las Vegas Homes' premium marketing channels.
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               {luxuryServices.map((service) => (
@@ -394,15 +397,15 @@ export default function LuxuryHomesPage() {
                 },
                 {
                   q: "Can I sell my luxury home privately without public listing?",
-                  a: "Yes. Dr. Jan offers confidential, off-market sales for clients who prefer discretion. Berkshire Hathaway HomeServices' network can connect your property with qualified buyers without public marketing, protecting your privacy while still reaching serious buyers.",
+                  a: "Yes. Dr. Jan offers confidential, off-market sales for clients who prefer discretion. No HOA Las Vegas Homes' network can connect your property with qualified buyers without public marketing, protecting your privacy while still reaching serious buyers.",
                 },
                 {
                   q: "What commission do you charge for luxury home sales?",
-                  a: "Commission rates are negotiable and discussed during your consultation. Dr. Jan provides transparent pricing based on your property and marketing needs. The value of Berkshire Hathaway's global reach and reputation often results in higher sale prices that more than offset commission.",
+                  a: "Commission rates are negotiable and discussed during your consultation. Dr. Jan provides transparent pricing based on your property and marketing needs. The value of No HOA Las Vegas's global reach and reputation often results in higher sale prices that more than offset commission.",
                 },
                 {
                   q: "Do you work with international buyers?",
-                  a: "Yes. Berkshire Hathaway HomeServices' global network includes agents in major international markets. Dr. Jan has experience working with buyers from Asia, Europe, and the Middle East who are interested in Las Vegas luxury properties.",
+                  a: "Yes. No HOA Las Vegas Homes' global network includes agents in major international markets. Dr. Jan has experience working with buyers from Asia, Europe, and the Middle East who are interested in Las Vegas luxury properties.",
                 },
                 {
                   q: "What's the process for buying a luxury home in Las Vegas?",
@@ -424,7 +427,7 @@ export default function LuxuryHomesPage() {
             </h2>
             <p className="text-xl text-slate-300 mb-8">
               Whether buying or selling a luxury property, Dr. Jan Duffy provides the expertise and
-              Berkshire Hathaway prestige your transaction deserves. Confidential consultations 
+              No HOA Las Vegas prestige your transaction deserves. Confidential consultations 
               available for discerning clients.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -451,7 +454,6 @@ export default function LuxuryHomesPage() {
         {/* Last Updated */}
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

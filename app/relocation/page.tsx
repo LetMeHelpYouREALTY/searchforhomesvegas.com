@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import { 
   Phone, 
@@ -123,7 +123,7 @@ export default function RelocationPage() {
               Relocating to Las Vegas?
             </h1>
             <p className="text-xl text-slate-600 mb-8">
-              <strong>Berkshire Hathaway HomeServices</strong> makes your move seamless. With
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> makes your move seamless. With
               50,000+ agents nationwide, we coordinate your relocation from anywhere in the country.
               Whether you're moving from California, the Midwest, or across the globe, Dr. Jan Duffy 
               provides comprehensive relocation services to ensure your transition is stress-free.
@@ -134,6 +134,9 @@ export default function RelocationPage() {
               <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> School Research</span>
             </div>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Why Las Vegas */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -450,7 +453,6 @@ export default function RelocationPage() {
         {/* Last Updated */}
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

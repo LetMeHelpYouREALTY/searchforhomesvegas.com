@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import RealScoutListings from "@/components/realscout/RealScoutListings";
+
 import { notFound } from "next/navigation";
 import {
   FEATURED_LISTING,
@@ -52,6 +54,7 @@ export default function FeaturedListingPage() {
         phoneHref="tel:+17025001955"
         siteHost="searchforhomesvegas.com"
       />
+      <RealScoutListings />
     </>
   );
 }

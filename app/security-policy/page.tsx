@@ -1,4 +1,6 @@
 import { withPageCanonical } from "@/lib/metadata";
+import RealScoutListings from "@/components/realscout/RealScoutListings";
+
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = withPageCanonical("/security-policy", {
@@ -18,7 +20,9 @@ export default function SecurityPolicyPage() {
           Security Policy
         </h1>
 
-        <div className="prose prose-lg max-w-none">
+        
+        <RealScoutListings />
+<div className="prose prose-lg max-w-none">
           {/* Overview */}
           <section className="mb-12">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">

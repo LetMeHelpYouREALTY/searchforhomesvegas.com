@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -27,7 +27,7 @@ export const metadata: Metadata = withPageCanonical("/market-insights", {
     "Nevada economic outlook",
     "California to Las Vegas migration",
     "Las Vegas tech hub",
-    "Berkshire Hathaway market insights",
+    "No HOA Las Vegas market insights",
   ],
 });
 
@@ -80,6 +80,9 @@ export default function MarketInsightsPage() {
               real estate in 2026 and beyond.
             </p>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Key Drivers */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -413,7 +416,7 @@ export default function MarketInsightsPage() {
                 from reactive ones. Las Vegas is no longer just a gaming and tourism economy.
                 Tech investment, California migration, and economic diversification are reshaping
                 which neighborhoods will outperform. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent, I help clients position
+                <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent, I help clients position
                 themselves for where the market is going, not just where it's been."
               </blockquote>
               <cite className="text-slate-300 font-semibold">
@@ -450,7 +453,6 @@ export default function MarketInsightsPage() {
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import { Phone, TreePine, ShoppingBag, GraduationCap, MapPin } from "lucide-react";
 import type { Metadata } from "next";
@@ -89,9 +89,12 @@ export default function GreenValleyPage() {
             </h1>
             <p className="text-xl text-slate-600">
               Henderson's original master-planned community. Find your Green Valley home with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> and Dr. Jan Duffy.
             </p>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Market Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -128,7 +131,7 @@ export default function GreenValleyPage() {
                 <strong>Green Valley</strong> holds a special place in Henderson's history as the city's
                 original master-planned community. Established in 1988, Green Valley pioneered the concept
                 of thoughtfully designed neighborhoods in Southern Nevada—long before master-planned
-                communities became the norm. Today, <strong>Berkshire Hathaway HomeServices</strong>
+                communities became the norm. Today, <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>
                 continues to serve Green Valley families, helping new generations discover what long-time
                 residents already know: this is one of the best places to live in Nevada.
               </p>
@@ -270,7 +273,7 @@ export default function GreenValleyPage() {
                 custom homes exceeding $1.2 million in Green Valley's more luxury enclaves.
               </p>
               <p>
-                Working with a <strong>Berkshire Hathaway HomeServices</strong> agent in Green Valley
+                Working with a <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent in Green Valley
                 means understanding the subtle differences between Green Valley proper, Green Valley Ranch,
                 and Green Valley South. Each area has distinct characteristics, price points, and lifestyle
                 offerings. Dr. Jan Duffy helps buyers navigate these nuances and find the perfect fit—whether
@@ -366,7 +369,6 @@ export default function GreenValleyPage() {
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

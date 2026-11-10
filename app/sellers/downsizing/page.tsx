@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -66,6 +66,9 @@ export default function DownsizingPage() {
               Let's Talk About Your Options → (702) 500-1955
             </a>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Equity Extraction */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -434,7 +437,7 @@ export default function DownsizingPage() {
                 raised families, and now deserve to enjoy life without maintaining a 4,000 square
                 foot house. I help them extract the equity they've earned, find a home that fits
                 their current lifestyle, and often pocket significant cash for travel, grandkids,
-                or just peace of mind. As a <strong>Berkshire Hathaway HomeServices</strong> agent,
+                or just peace of mind. As a <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent,
                 I have the experience and compassion this transition requires."
               </blockquote>
               <cite className="text-slate-300 font-semibold">
@@ -471,7 +474,6 @@ export default function DownsizingPage() {
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

@@ -1,4 +1,7 @@
-import { Shield, TrendingUp, Users, Award, Clock, Home } from "lucide-react";
+import { Shield, TrendingUp, Users, Award, Clock, Home, Calendar, Phone } from "lucide-react";
+import AgentPortrait from "@/components/agent/AgentPortrait";
+import CalendlyButton from "@/components/calendly/CalendlyButton";
+import { CALENDLY } from "@/lib/calendly";
 
 const features = [
   {
@@ -38,12 +41,31 @@ export default function WhyChooseUs() {
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
+          <div className="mb-6 flex justify-center">
+            <AgentPortrait size="lg" caption />
+          </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            Why Choose Us
+            Why Choose Dr. Jan
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Experience the difference of working with a trusted real estate professional
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-6">
+            Experience the difference of working with a trusted Las Vegas real estate professional
           </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <CalendlyButton
+              url={CALENDLY.buyerConsultation}
+              className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 font-semibold no-underline hover:bg-blue-700"
+            >
+              <Calendar className="h-4 w-4" />
+              Schedule online
+            </CalendlyButton>
+            <a
+              href="tel:+17025001955"
+              className="inline-flex items-center justify-center gap-2 border border-slate-300 text-slate-800 px-6 py-3 font-semibold no-underline hover:border-slate-500"
+            >
+              <Phone className="h-4 w-4" />
+              702-500-1955
+            </a>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">

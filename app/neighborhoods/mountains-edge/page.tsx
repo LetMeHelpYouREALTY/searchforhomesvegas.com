@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import { Phone, Mountain, TreePine, DollarSign, Home as HomeIcon } from "lucide-react";
 import type { Metadata } from "next";
@@ -89,9 +89,12 @@ export default function MountainsEdgePage() {
             </h1>
             <p className="text-xl text-slate-600">
               Affordable luxury in southwest Las Vegas. Find your Mountains Edge home with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> and Dr. Jan Duffy.
             </p>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Market Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -129,7 +132,7 @@ export default function MountainsEdgePage() {
                 master-planned community amenities at prices significantly below Summerlin or
                 Henderson. This 3,500-acre community in southwest Las Vegas offers mountain views,
                 exceptional parks, and modern homes—without the premium prices of the valley's
-                more established luxury markets. <strong>Berkshire Hathaway HomeServices</strong>
+                more established luxury markets. <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>
                 helps value-conscious buyers discover Mountains Edge's potential.
               </p>
               <p>
@@ -291,7 +294,7 @@ export default function MountainsEdgePage() {
                 $750,000 for larger properties with premium views and upgraded features.
               </p>
               <p>
-                Working with <strong>Berkshire Hathaway HomeServices</strong> in Mountains Edge means
+                Working with <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> in Mountains Edge means
                 getting honest guidance about where the community offers the best value. Dr. Jan Duffy
                 helps buyers identify neighborhoods with the strongest appreciation potential, homes
                 with the best views, and properties that represent genuine value rather than
@@ -389,7 +392,6 @@ export default function MountainsEdgePage() {
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

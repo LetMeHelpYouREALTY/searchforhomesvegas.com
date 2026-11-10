@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -143,6 +143,9 @@ export default function CaliforniaRelocatorPage() {
               Start Your Tax-Free Life → (702) 500-1955
             </a>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Tax Savings Comparison */}
           <section className="mb-16 bg-gradient-to-br from-green-600 to-green-700 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -450,7 +453,7 @@ export default function CaliforniaRelocatorPage() {
                 "I've helped hundreds of California families make the move to Las Vegas. The most
                 common reaction? 'Why didn't we do this sooner?' Between the tax savings, the space,
                 and the lifestyle, most clients can't believe what their California equity buys here.
-                As a <strong>Berkshire Hathaway HomeServices</strong> agent, I coordinate with our
+                As a <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent, I coordinate with our
                 California offices to make the transition seamless—you don't have to figure this
                 out alone."
               </blockquote>
@@ -491,7 +494,6 @@ export default function CaliforniaRelocatorPage() {
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

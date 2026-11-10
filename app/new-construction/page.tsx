@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -280,6 +280,9 @@ export default function NewConstructionPage() {
             </div>
           </div>
 
+          <RealScoutListings />
+
+
           {/* Why Free Representation */}
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">
@@ -540,7 +543,7 @@ export default function NewConstructionPage() {
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "I've seen buyers leave $30,000 on the table because they didn't know what to ask
                 for. Builders expect negotiation—their sales managers have authority to approve
-                upgrades and credits. As your <strong>Berkshire Hathaway HomeServices</strong>
+                upgrades and credits. As your <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>
                 agent, I know exactly which incentives are available, which upgrades add value, and
                 which builder promises are legally binding. This representation costs you nothing
                 and can save you tens of thousands."
@@ -694,7 +697,6 @@ export default function NewConstructionPage() {
           Last Updated: January 2026 | Incentives subject to change
         </div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

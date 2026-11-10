@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -26,7 +26,7 @@ export const metadata: Metadata = withPageCanonical("/55-plus-communities/sun-ci
     "55 plus communities North Las Vegas",
     "affordable 55+ community Las Vegas",
     "Sun City Aliante HOA fees",
-    "Berkshire Hathaway Sun City Aliante",
+    "No HOA Las Vegas Sun City Aliante",
   ],
   openGraph: {
     title: "Sun City Aliante - Most Affordable Sun City in Las Vegas",
@@ -94,6 +94,9 @@ export default function SunCityAliantePage() {
               100+ clubs—from $280K.
             </p>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -390,7 +393,7 @@ export default function SunCityAliantePage() {
                 full Sun City lifestyle at the best possible price. The amenities
                 are excellent, the community is active and welcoming, and you
                 simply can't beat the value. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent, I help
+                <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent, I help
                 buyers compare all the Sun City options and understand why Aliante
                 often makes the most financial sense."
               </blockquote>
@@ -436,7 +439,6 @@ export default function SunCityAliantePage() {
           Last Updated: January 2026
         </div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

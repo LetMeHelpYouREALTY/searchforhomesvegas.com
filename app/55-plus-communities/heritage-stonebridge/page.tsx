@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -27,7 +27,7 @@ export const metadata: Metadata = withPageCanonical("/55-plus-communities/herita
     "guard-gated 55+ community Las Vegas",
     "Summerlin 55+ communities",
     "boutique 55+ community Las Vegas",
-    "Berkshire Hathaway Heritage Stonebridge",
+    "No HOA Las Vegas Heritage Stonebridge",
   ],
   openGraph: {
     title: "Heritage at Stonebridge - Guard-Gated 55+ Living in Summerlin",
@@ -95,6 +95,9 @@ export default function HeritageAtStonebridgePage() {
               Summerlin.
             </p>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -377,7 +380,7 @@ export default function HeritageAtStonebridgePage() {
                 privacy without the sprawl of larger 55+ communities. The
                 guard-gated security is genuine—not just a code anyone can get.
                 And the location in Summerlin is simply unbeatable. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent, I help
+                <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent, I help
                 buyers who prioritize quality over quantity find their perfect
                 fit here."
               </blockquote>
@@ -423,7 +426,6 @@ export default function HeritageAtStonebridgePage() {
           Last Updated: January 2026
         </div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

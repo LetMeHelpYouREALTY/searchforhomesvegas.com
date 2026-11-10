@@ -1,8 +1,12 @@
 import Link from "next/link";
 import Navbar from "@/components/layouts/Navbar";
+import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Footer from "@/components/layouts/Footer";
+import AgentPortrait from "@/components/agent/AgentPortrait";
+import CalendlyButton from "@/components/calendly/CalendlyButton";
+import { CALENDLY } from "@/lib/calendly";
 import Image from "next/image";
-import { Bed, Bath, Square, MapPin, Calendar } from "lucide-react";
+import { Bed, Bath, Square, MapPin, Calendar, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import { withPageCanonical } from "@/lib/metadata";
@@ -30,7 +34,7 @@ async function getProperty(id: string) {
     name: "Modern Luxury Home",
     location: "Summerlin, Las Vegas, NV",
     price: "$850,000",
-    image: "/Image/hero_bg_1.jpg",
+    image: "https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/searchforhomesvegas/property-no-hoa-luxury-custom/public",
     bedrooms: 4,
     bathrooms: 3,
     squareFeet: 3200,
@@ -102,6 +106,8 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
             />
           </div>
 
+          <RealScoutListings />
+
           {/* Property Details Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {/* Main Content */}
@@ -143,7 +149,6 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
                 </div>
               </div>
 
-              {/* RealScout Widget Integration Point */}
               <div className="bg-blue-50 rounded-lg p-6">
                 <h3 className="text-xl font-bold text-slate-900 mb-2">
                   Schedule a Showing
@@ -160,17 +165,31 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
             {/* Sidebar */}
             <div className="md:col-span-1">
               <div className="bg-white border border-slate-200 rounded-lg p-6 sticky top-24">
-                <h3 className="text-xl font-bold text-slate-900 mb-4">
-                  Contact Agent
+                <div className="mb-4 flex justify-center">
+                  <AgentPortrait size="md" caption />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2 text-center">
+                  Schedule a showing
                 </h3>
-                <p className="text-slate-600 mb-4">Dr. Jan Duffy</p>
-                <p className="text-sm text-slate-600 mb-6">Nevada Properties</p>
+                <p className="text-sm text-slate-600 mb-6 text-center">
+                  No HOA Las Vegas Homes by Dr Jan Duffy
+                </p>
                 <div className="space-y-3">
+                  <CalendlyButton
+                    url={CALENDLY.showing}
+                    className="w-full inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-4 py-2.5 font-semibold no-underline hover:bg-blue-700"
+                  >
+                    <Calendar className="h-4 w-4" />
+                    Book on Calendly
+                  </CalendlyButton>
                   <Button
                     asChild
-                    className="w-full bg-blue-600 hover:bg-blue-700"
+                    className="w-full bg-slate-900 hover:bg-slate-800"
                   >
-                    <a href="tel:+17025001955">Call (702) 500-1955</a>
+                    <a href="tel:+17025001955" className="inline-flex items-center justify-center gap-2">
+                      <Phone className="h-4 w-4" />
+                      Call (702) 500-1955
+                    </a>
                   </Button>
                   <Button asChild variant="outline" className="w-full">
                     <a href="/contact">Send Message</a>

@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import {
   Phone,
@@ -91,6 +91,8 @@ export default function MarketUpdatePage() {
               <span>By Dr. Jan Duffy, REALTOR®</span>
             </div>
           </div>
+
+          <RealScoutListings />
 
           {/* Key Statistics */}
           <section className="mb-16 max-w-5xl mx-auto">
@@ -214,7 +216,7 @@ export default function MarketUpdatePage() {
                 <p>
                   What I'm watching closely: <strong>new listing activity</strong>. If inventory
                   continues declining while sales remain strong, we could see more competitive
-                  conditions by spring. <strong>Berkshire Hathaway HomeServices</strong> buyers
+                  conditions by spring. <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> buyers
                   should be prepared to move quickly on desirable properties, while sellers should
                   consider listing before the traditional spring rush creates more competition."
                 </p>
@@ -312,7 +314,7 @@ export default function MarketUpdatePage() {
                   <li className="flex items-start">
                     <ArrowRight className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span>
-                      <strong>Leverage the brand.</strong> Berkshire Hathaway HomeServices
+                      <strong>Leverage the brand.</strong> No HOA Las Vegas Homes
                       marketing reaches qualified buyers locally, nationally, and internationally.
                     </span>
                   </li>
@@ -433,7 +435,6 @@ export default function MarketUpdatePage() {
           Last Updated: January 24, 2026 | Data Source: Las Vegas REALTORS® MLS
         </div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

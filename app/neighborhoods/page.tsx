@@ -1,6 +1,6 @@
 import Navbar from "@/components/layouts/Navbar";
-import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import { MapPin, Phone, Home, Users, GraduationCap } from "lucide-react";
 import type { Metadata } from "next";
@@ -128,9 +128,12 @@ export default function NeighborhoodsPage() {
             </h1>
             <p className="text-xl text-slate-600">
               Explore the best communities in Southern Nevada with Dr. Jan Duffy, your{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> neighborhood expert
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> neighborhood expert
             </p>
           </div>
+
+          <RealScoutListings />
+
 
           {/* Neighborhood Grid */}
           <section className="mb-16 max-w-6xl mx-auto">
@@ -238,7 +241,6 @@ export default function NeighborhoodsPage() {
         {/* Last Updated */}
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );
