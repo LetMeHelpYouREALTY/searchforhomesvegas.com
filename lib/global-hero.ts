@@ -3,6 +3,8 @@
  * Distinct from full-bleed PageHero (homepage / page-level heroes).
  */
 
+import { siteImage } from "@/lib/cloudflare-images";
+
 export type GlobalHeroConfig = {
   src: string;
   alt: string;
@@ -12,8 +14,8 @@ export type GlobalHeroConfig = {
 };
 
 export const GLOBAL_HERO: GlobalHeroConfig = {
-  src: "/images/global-hero/heyberkshire.jpg",
-  alt: "Las Vegas Valley desert skyline and residential rooftops at dusk, Las Vegas, NV",
+  src: siteImage("globalHeroValley", "hero"),
+  alt: "Las Vegas Valley residential rooftops and desert mountains at dusk — No HOA Las Vegas Homes",
   tagline: "No HOA Las Vegas Homes by Dr Jan Duffy",
   phoneDisplay: "(702) 500-1955",
   phoneTel: "tel:+17025001955",

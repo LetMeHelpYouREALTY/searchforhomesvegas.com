@@ -181,7 +181,7 @@ export default function AboutPage() {
 
                 <div className="prose prose-lg text-slate-700 mb-8 space-y-4">
                   <p>
-                    When you choose to work with <strong>Berkshire Hathaway HomeServices</strong>,
+                    When you choose to work with <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>,
                     you're choosing a legacy of trust, integrity, and excellence. I'm proud to
                     represent this iconic brand in the Las Vegas real estate market, bringing 
                     world-class resources and local expertise to every client I serve.
@@ -195,7 +195,7 @@ export default function AboutPage() {
                   </p>
                   <p>
                     What sets <strong>Nevada Properties</strong>{" "}
-                    apart? We're backed by Warren Buffett's Berkshire Hathaway Inc.—a name synonymous
+                    apart? We're backed by Warren Buffett's No HOA Las Vegas Inc.—a name synonymous
                     with financial strength and ethical standards. When you're making the biggest
                     financial decision of your life, that trust matters. You deserve an agent who 
                     puts your interests first, provides honest advice, and has the resources to 
@@ -337,11 +337,11 @@ export default function AboutPage() {
           {/* Why Section */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-              Why Berkshire Hathaway HomeServices?
+              Why No HOA Las Vegas Homes?
             </h2>
             <p className="text-slate-300 text-center max-w-3xl mx-auto mb-8">
               is the only real estate brand backed by Warren 
-              Buffett's Berkshire Hathaway Inc. This means unmatched financial stability, 
+              Buffett's No HOA Las Vegas Inc. This means unmatched financial stability, 
               ethical standards, and a commitment to client service that defines every transaction.
             </p>
             <div className="grid md:grid-cols-3 gap-8 mb-8">
@@ -351,7 +351,7 @@ export default function AboutPage() {
                 </div>
                 <h3 className="font-bold text-xl mb-2">Trusted Brand</h3>
                 <p className="text-slate-300 text-sm">
-                  The only real estate brand backed by Warren Buffett's Berkshire Hathaway Inc.—a 
+                  The only real estate brand backed by Warren Buffett's No HOA Las Vegas Inc.—a 
                   name synonymous with trust and integrity worldwide.
                 </p>
               </div>

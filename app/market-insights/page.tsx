@@ -27,7 +27,7 @@ export const metadata: Metadata = withPageCanonical("/market-insights", {
     "Nevada economic outlook",
     "California to Las Vegas migration",
     "Las Vegas tech hub",
-    "Berkshire Hathaway market insights",
+    "No HOA Las Vegas market insights",
   ],
 });
 
@@ -416,7 +416,7 @@ export default function MarketInsightsPage() {
                 from reactive ones. Las Vegas is no longer just a gaming and tourism economy.
                 Tech investment, California migration, and economic diversification are reshaping
                 which neighborhoods will outperform. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent, I help clients position
+                <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent, I help clients position
                 themselves for where the market is going, not just where it's been."
               </blockquote>
               <cite className="text-slate-300 font-semibold">

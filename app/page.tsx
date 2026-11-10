@@ -18,6 +18,7 @@ import { getSiteUrl } from "@/lib/site-url";
 import { siteConfig } from "@/lib/site-config";
 import { SITE_ANGLE } from "@/lib/site-angle";
 import { withPageCanonical } from "@/lib/metadata";
+import { siteImage } from "@/lib/cloudflare-images";
 
 export const metadata: Metadata = withPageCanonical("/", {
   title: SITE_ANGLE.title,
@@ -55,7 +56,8 @@ const FAQ_SECTION_COPY: Record<string, { title: string; subtitle: string }> = {
 export default async function Home() {
   const config = await getPageDomainConfig();
   const faqs = getFaqsForDomain(config.pageType, config.domain);
-  const faqCopy = FAQ_SECTION_COPY[config.pageType] ?? FAQ_SECTION_COPY["search"];
+  const faqCopy =
+    FAQ_SECTION_COPY[config.pageType] ?? FAQ_SECTION_COPY["search"];
   const faqTitle =
     config.pageType === "community" || config.pageType === "55plus"
       ? `${config.neighborhood} FAQ`
@@ -69,7 +71,7 @@ export default async function Home() {
     alternateName: `No HOA ${config.neighborhood} Homes by Dr Jan Duffy`,
     url: getSiteUrl(),
     telephone: "+17025001955",
-    image: `${getSiteUrl()}/images/agent/dr-jan-duffy.png`,
+    image: siteImage("agentPortrait", "public"),
     address: {
       "@type": "PostalAddress",
       streetAddress: "9406 W Lake Mead Blvd, Suite 100",
@@ -79,7 +81,11 @@ export default async function Home() {
       addressCountry: "US",
     },
     areaServed: config.neighborhood,
-    knowsAbout: ["No HOA homes Las Vegas", "Luxury non-HOA estates", config.neighborhood],
+    knowsAbout: [
+      "No HOA homes Las Vegas",
+      "Luxury non-HOA estates",
+      config.neighborhood,
+    ],
   };
 
   const faqSchema = {
@@ -95,6 +101,37 @@ export default async function Home() {
     })),
   };
 
+  const speakableSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${getSiteUrl()}/#webpage`,
+    name: SITE_ANGLE.title,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "[data-persona='no-hoa-las-vegas-home-buyers'] h2"],
+    },
+    mainEntity: { "@id": `${getSiteUrl()}#business` },
+  };
+
+  const placeSchema = {
+    "@context": "https://schema.org",
+    "@type": "Place",
+    "@id": `${getSiteUrl()}/#service-area`,
+    name: `${config.neighborhood}, Nevada`,
+    description: `No HOA and luxury non-HOA homes in ${config.neighborhood} with Dr. Jan Duffy.`,
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: config.neighborhood,
+      addressRegion: "NV",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 36.1699,
+      longitude: -115.1398,
+    },
+  };
+
   return (
     <>
       <script
@@ -105,14 +142,22 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(placeSchema) }}
+      />
       <Navbar />
       <main>
         {/* Luxury full-bleed hero — brand, one headline, one line, one CTA group */}
         <section className="relative min-h-[100svh] flex items-end overflow-hidden bg-ink text-stone-soft">
           <div className="absolute inset-0">
             <Image
-              src="/Image/hero_bg_1.jpg"
-              alt="Las Vegas Valley homes at dusk with mountain backdrop"
+              src={siteImage("heroEstateDusk", "heroxl")}
+              alt="Luxury custom estate on a private Las Vegas desert lot at dusk — No HOA acreage living"
               fill
               priority
               sizes="100vw"
@@ -167,7 +212,6 @@ export default async function Home() {
 
         <RealScoutListings />
 
-
         <FeaturedListing
           phone="(702) 500-1955"
           phoneHref="tel:+17025001955"
@@ -179,8 +223,17 @@ export default async function Home() {
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-end">
               <div className="lg:col-span-5">
-                <div className="mb-6">
+                <div className="mb-6 flex items-end gap-4">
                   <AgentPortrait size="xl" caption priority />
+                </div>
+                <div className="relative w-full h-40 mb-6 overflow-hidden">
+                  <Image
+                    src={siteImage("sectionWhyDrJan", "card")}
+                    alt="Las Vegas real estate workspace for No HOA home buyers with Dr. Jan Duffy"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                  />
                 </div>
                 <p className="text-[11px] uppercase tracking-[0.24em] text-bronze-deep mb-4">
                   Why Dr. Jan
@@ -189,8 +242,8 @@ export default async function Home() {
                   Las Vegas market depth with direct, no-HOA expertise.
                 </h2>
                 <p className="text-ink/70 text-lg font-light leading-relaxed mb-8">
-                  Since 2008: $127M+ closed, map-first search, and direct access — she answers
-                  702-500-1955 herself.
+                  Since 2008: $127M+ closed, map-first search, and direct access
+                  — she answers 702-500-1955 herself.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 items-start">
                   <a
@@ -219,7 +272,8 @@ export default async function Home() {
                   {
                     value: "$127M+",
                     label: "Career volume",
-                    detail: "Buyers, sellers, luxury, 55+, and investment deals.",
+                    detail:
+                      "Buyers, sellers, luxury, 55+, and investment deals.",
                   },
                   {
                     value: "5.0★",
@@ -228,11 +282,15 @@ export default async function Home() {
                   },
                 ].map((item) => (
                   <div key={item.label} className="border-t border-ink/15 pt-6">
-                    <div className="font-display text-4xl text-ink mb-2">{item.value}</div>
+                    <div className="font-display text-4xl text-ink mb-2">
+                      {item.value}
+                    </div>
                     <div className="text-sm font-semibold tracking-wide text-ink mb-2">
                       {item.label}
                     </div>
-                    <p className="text-sm text-ink/60 font-light leading-relaxed">{item.detail}</p>
+                    <p className="text-sm text-ink/60 font-light leading-relaxed">
+                      {item.detail}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -262,7 +320,9 @@ export default async function Home() {
                   <div className="font-display text-4xl md:text-5xl text-bronze-soft mb-2">
                     {value}
                   </div>
-                  <div className="text-sm text-stone/60 tracking-wide">{label}</div>
+                  <div className="text-sm text-stone/60 tracking-wide">
+                    {label}
+                  </div>
                 </div>
               ))}
             </div>
@@ -321,8 +381,8 @@ export default async function Home() {
               </CalendlyButton>
             </div>
             <p className="mt-8 text-sm text-stone/50">
-              No HOA Las Vegas Homes by Dr Jan Duffy · License S.0197614.LLC · 9406 W Lake Mead
-              Blvd, Suite 100, Las Vegas, NV 89134
+              No HOA Las Vegas Homes by Dr Jan Duffy · License S.0197614.LLC ·
+              9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134
             </p>
           </div>
         </section>

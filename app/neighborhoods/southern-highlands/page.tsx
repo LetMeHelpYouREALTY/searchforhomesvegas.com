@@ -89,7 +89,7 @@ export default function SouthernHighlandsPage() {
             </h1>
             <p className="text-xl text-slate-600">
               Premier golf course living in southwest Las Vegas. Discover Southern Highlands with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> and Dr. Jan Duffy.
             </p>
           </div>
 
@@ -131,7 +131,7 @@ export default function SouthernHighlandsPage() {
                 <strong>Southern Highlands</strong> stands as southwest Las Vegas's answer to Summerlin—a
                 meticulously planned 2,200-acre community centered around an award-winning championship
                 golf course. For buyers seeking luxury living with convenient access to the Strip, airport,
-                and I-15 corridor, <strong>Berkshire Hathaway HomeServices</strong> considers Southern
+                and I-15 corridor, <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> considers Southern
                 Highlands among Las Vegas's finest residential options.
               </p>
               <p>
@@ -296,7 +296,7 @@ export default function SouthernHighlandsPage() {
                 from $500,000 in non-gated sections to over $3 million for golf course estates.
               </p>
               <p>
-                Choosing <strong>Berkshire Hathaway HomeServices</strong> for Southern Highlands means
+                Choosing <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> for Southern Highlands means
                 working with agents who understand the community's unique value proposition. Dr. Jan Duffy
                 can explain the differences between various sections, which lots offer the best views,
                 and how HOA fees vary across the community. This knowledge, combined with the BHHS
@@ -312,7 +312,7 @@ export default function SouthernHighlandsPage() {
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Southern Highlands delivers luxury living at prices that often surprise buyers—especially
                 those relocating from California. You get championship golf, guard-gated security, mountain
-                views, and nearby public schools, all just 15 minutes from the Strip. As a Berkshire Hathaway
+                views, and nearby public schools, all just 15 minutes from the Strip. As a No HOA Las Vegas
                 HomeServices agent, I help clients see beyond the golf course to the community's full potential."
               </blockquote>
               <cite className="text-slate-900 font-semibold">

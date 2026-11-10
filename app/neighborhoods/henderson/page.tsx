@@ -64,7 +64,7 @@ const faqSchema = {
       name: "Why choose for Henderson real estate?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Nevada Properties has served Henderson for decades. Our agents like Dr. Jan Duffy know every community, school district, and HOA. The Berkshire Hathaway name provides trust and resources that benefit both buyers and sellers.",
+        text: "Nevada Properties has served Henderson for decades. Our agents like Dr. Jan Duffy know every community, school district, and HOA. The No HOA Las Vegas name provides trust and resources that benefit both buyers and sellers.",
       },
     },
   ],
@@ -105,7 +105,7 @@ export default function HendersonPage() {
             </h1>
             <p className="text-xl text-slate-600">
               Nevada's second-largest city. Find your Henderson home with Dr. Jan Duffy, your trusted{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> Henderson specialist.
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> Henderson specialist.
             </p>
           </div>
 
@@ -146,7 +146,7 @@ export default function HendersonPage() {
               <p>
                 <strong>Henderson</strong> has quietly become one of the most desirable cities in the American
                 Southwest. As Nevada's second-largest city with over 320,000 residents, Henderson offers the
-                perfect balance of suburban tranquility and urban convenience. <strong>Berkshire Hathaway
+                perfect balance of suburban tranquility and urban convenience. <strong>No HOA Las Vegas
                 HomeServices</strong> has been helping families find their Henderson dream homes for decades,
                 and Dr. Jan Duffy brings unmatched expertise to every transaction.
               </p>
@@ -310,11 +310,11 @@ export default function HendersonPage() {
                 properties exceeding $2 million in guard-gated communities.
               </p>
               <p>
-                Choosing <strong>Berkshire Hathaway HomeServices</strong> for your Henderson home search means
+                Choosing <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> for your Henderson home search means
                 working with agents who understand the subtle differences between Henderson's many communities.
                 Dr. Jan Duffy can explain which neighborhoods have the nearby public schools for your children's ages,
                 which HOAs are well-managed, and which areas offer the strongest investment potential. That
-                local knowledge, backed by the resources and reputation of Berkshire Hathaway, makes all the
+                local knowledge, backed by the resources and reputation of No HOA Las Vegas, makes all the
                 difference.
               </p>
             </div>
@@ -377,7 +377,7 @@ export default function HendersonPage() {
                 </h3>
                 <p className="text-slate-600">
                   Nevada Properties has served Henderson for decades. Our agents like Dr. Jan Duffy
-                  know every community, school district, and HOA. The Berkshire Hathaway name provides
+                  know every community, school district, and HOA. The No HOA Las Vegas name provides
                   trust and resources that benefit both buyers and sellers.
                 </p>
               </div>

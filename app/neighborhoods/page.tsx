@@ -128,7 +128,7 @@ export default function NeighborhoodsPage() {
             </h1>
             <p className="text-xl text-slate-600">
               Explore the best communities in Southern Nevada with Dr. Jan Duffy, your{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> neighborhood expert
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> neighborhood expert
             </p>
           </div>
 

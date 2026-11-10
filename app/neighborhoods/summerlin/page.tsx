@@ -101,7 +101,7 @@ export default function SummerlinPage() {
             </h1>
             <p className="text-xl text-slate-600">
               Discover Las Vegas's premier master-planned community with Dr. Jan Duffy, your trusted{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> Summerlin expert.
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> Summerlin expert.
             </p>
           </div>
 
@@ -141,7 +141,7 @@ export default function SummerlinPage() {
               </h2>
               <p>
                 When homebuyers search for the best neighborhoods in Las Vegas, <strong>Summerlin</strong> consistently
-                ranks at the top. As a <strong>Berkshire Hathaway HomeServices</strong> agent specializing in Summerlin
+                ranks at the top. As a <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent specializing in Summerlin
                 real estate, Dr. Jan Duffy has helped hundreds of families find their perfect home in this
                 award-winning master-planned community.
               </p>
@@ -289,7 +289,7 @@ export default function SummerlinPage() {
                 a fraction of the cost—with no state income tax.
               </p>
               <p>
-                Working with a <strong>Berkshire Hathaway HomeServices</strong> agent gives you access to listings
+                Working with a <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent gives you access to listings
                 before they hit the market, expert negotiation skills, and the backing of a globally trusted brand.
                 Dr. Jan Duffy has been serving Summerlin since 2008, which means you'll have insights that online 
                 searches simply can't provide—from which streets have the best mountain views to which builders 

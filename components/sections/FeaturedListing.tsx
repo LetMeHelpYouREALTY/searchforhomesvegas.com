@@ -49,7 +49,7 @@ export const FEATURED_LISTING = {
   ],
   annualTax: "$2,679",
   mlsNumber: "2829192",
-  listingOffice: "BHHS Nevada Properties",
+  listingOffice: "No HOA Las Vegas Homes",
   listedDate: "2026-10-29",
   /** Date these facts were last checked against the listing; shown on the page. */
   updatedDate: "2026-10-29",
@@ -101,7 +101,7 @@ export const FEATURED_LISTING_FAQS = [
   },
   {
     q: "How do I schedule a showing?",
-    a: "Call Dr. Jan Duffy, the listing agent with BHHS Nevada Properties, at the number on this page.",
+    a: "Call Dr. Jan Duffy, the listing agent with No HOA Las Vegas Homes, at the number on this page.",
   },
 ];
 

@@ -123,7 +123,7 @@ export default function RelocationPage() {
               Relocating to Las Vegas?
             </h1>
             <p className="text-xl text-slate-600 mb-8">
-              <strong>Berkshire Hathaway HomeServices</strong> makes your move seamless. With
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> makes your move seamless. With
               50,000+ agents nationwide, we coordinate your relocation from anywhere in the country.
               Whether you're moving from California, the Midwest, or across the globe, Dr. Jan Duffy 
               provides comprehensive relocation services to ensure your transition is stress-free.

@@ -459,7 +459,7 @@ export default function DivorceProbatePage() {
                 <Shield className="h-10 w-10 text-blue-600 mx-auto mb-4" />
                 <h3 className="font-bold text-slate-900 mb-2">Credibility & Trust</h3>
                 <p className="text-slate-600 text-sm">
-                  The Berkshire Hathaway name carries weight with attorneys, judges, and opposing
+                  The No HOA Las Vegas name carries weight with attorneys, judges, and opposing
                   parties. Our valuations and processes are respected because of the brand's
                   reputation for integrity.
                 </p>
@@ -491,7 +491,7 @@ export default function DivorceProbatePage() {
                 "When you're going through a divorce or handling a loved one's estate, the last
                 thing you need is real estate stress. I've handled hundreds of sensitive transactions,
                 and I understand these situations require more than market expertise—they require
-                discretion, patience, and genuine care. <strong>Berkshire Hathaway HomeServices</strong>
+                discretion, patience, and genuine care. <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>
                 gives me the resources and credibility these situations demand. Your privacy and
                 peace of mind come first."
               </blockquote>

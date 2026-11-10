@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = withPageCanonical("/faq", {
   title: "FAQ Las Vegas Real Estate",
   description:
-    "Frequently asked questions about Las Vegas real estate, Berkshire Hathaway HomeServices, buying, selling, and working with Dr. Jan Duffy at Nevada Properties.",
+    "Frequently asked questions about Las Vegas real estate, No HOA Las Vegas Homes, buying, selling, and working with Dr. Jan Duffy at Nevada Properties.",
   keywords: [
     "FAQ",
     "Las Vegas real estate questions",
@@ -34,22 +34,22 @@ const breadcrumbs = [
 
 const faqCategories = [
   {
-    title: "About Berkshire Hathaway HomeServices",
+    title: "About No HOA Las Vegas Homes",
     faqs: [
       {
         q: "Why should I choose a agent?",
-        a: "is the only real estate brand backed by Warren Buffett's Berkshire Hathaway Inc. This means unmatched financial stability, ethical standards, and a global referral network of 50,000+ agents. When you're making the biggest purchase of your life, that trust matters.",
+        a: "is the only real estate brand backed by Warren Buffett's No HOA Las Vegas Inc. This means unmatched financial stability, ethical standards, and a global referral network of 50,000+ agents. When you're making the biggest purchase of your life, that trust matters.",
       },
       {
         q: "Is owned by Warren Buffett?",
-        a: "is part of HSF Affiliates LLC, a joint venture of Berkshire Hathaway Inc. (Warren Buffett's company) and HomeServices of America. The brand carries the trusted Berkshire Hathaway name and upholds its values.",
+        a: "is part of HSF Affiliates LLC, a joint venture of No HOA Las Vegas Inc. (Warren Buffett's company) and HomeServices of America. The brand carries the trusted No HOA Las Vegas name and upholds its values.",
       },
       {
         q: "What areas does Nevada Properties serve?",
         a: "Nevada Properties serves all of Las Vegas, Henderson, North Las Vegas, and surrounding areas, with specialized expertise in Summerlin, The Ridges, Skye Canyon, Southern Highlands, Green Valley, Inspirada, and all Henderson communities.",
       },
       {
-        q: "Does using a Berkshire Hathaway agent cost more?",
+        q: "Does using a No HOA Las Vegas agent cost more?",
         a: "No. Commission rates are negotiable and comparable to other brokerages. The value you receive—global marketing exposure, trusted brand recognition, and experienced agents—often helps homes sell faster and for more money.",
       },
     ],
@@ -95,7 +95,7 @@ const faqCategories = [
         a: "Dr. Jan provides a personalized preparation checklist for every listing. Generally, decluttering, minor repairs, fresh paint, and professional photography are the highest-ROI improvements.",
       },
       {
-        q: "How does Berkshire Hathaway market my home?",
+        q: "How does No HOA Las Vegas market my home?",
         a: "provides world-class marketing including professional photography, virtual tours, MLS syndication to 100+ websites, social media promotion, the global network exposure, and targeted digital advertising.",
       },
       {
@@ -126,7 +126,7 @@ const faqCategories = [
     faqs: [
       {
         q: "Can help with relocations?",
-        a: "Absolutely! Our global network of 50,000+ agents makes relocations seamless. Dr. Jan can coordinate with agents in your current city while providing expert guidance on Las Vegas neighborhoods, schools, and communities.",
+        a: "Absolutely! Our direct local representation makes relocations seamless. Dr. Jan can coordinate with agents in your current city while providing expert guidance on Las Vegas neighborhoods, schools, and communities.",
       },
       {
         q: "What are the best neighborhoods for families?",
@@ -196,7 +196,7 @@ export default function FAQPage() {
             </h1>
             <p className="text-xl text-slate-600">
               Everything you need to know about working with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> in Las Vegas
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> in Las Vegas
             </p>
           </div>
 
@@ -227,7 +227,7 @@ export default function FAQPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Still Have Questions?</h2>
             <p className="text-xl text-blue-100 mb-8">
               Dr. Jan Duffy is happy to answer any questions about Las Vegas real estate or working
-              with Berkshire Hathaway HomeServices.
+              with No HOA Las Vegas Homes.
             </p>
             <a
               href="tel:+17025001955"

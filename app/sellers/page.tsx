@@ -27,7 +27,7 @@ export const metadata: Metadata = withPageCanonical("/sellers", {
   keywords: [
     "sell home Las Vegas",
     "Las Vegas listing agent",
-    "Berkshire Hathaway sell house",
+    "No HOA Las Vegas sell house",
     "Henderson home selling",
     "what is my home worth Las Vegas",
     "Las Vegas real estate agent",
@@ -59,7 +59,7 @@ const sellingBenefits = [
     icon: Users,
     title: "Global Buyer Network",
     description:
-      "Berkshire Hathaway's 50,000+ agents worldwide means your listing reaches qualified buyers from across the globe—especially important for Las Vegas's strong relocation and international buyer markets.",
+      "No HOA Las Vegas's 50,000+ agents worldwide means your listing reaches qualified buyers from across the globe—especially important for Las Vegas's strong relocation and international buyer markets.",
   },
   {
     icon: BarChart,
@@ -113,7 +113,7 @@ const includedServices = [
   "Drone video for properties with views or large lots",
   "Comprehensive market analysis & pricing strategy",
   "MLS listing syndicated to 100+ websites",
-  "Berkshire Hathaway global network exposure",
+  "No HOA Las Vegas global network exposure",
   "Social media marketing campaign",
   "Targeted digital advertising",
   "Open house coordination",
@@ -142,7 +142,7 @@ export default function SellersPage() {
               Sell Your Las Vegas Home for Top Dollar
             </h1>
             <p className="text-xl text-slate-600 mb-8">
-              When you list with <strong>Berkshire Hathaway HomeServices</strong>, you get
+              When you list with <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>, you get
               world-class marketing, expert pricing, and a name that buyers trust. Dr. Jan Duffy 
               has been serving Las Vegas since 2008—helping sellers achieve top-dollar results 
               with proven marketing strategies and skilled negotiation.
@@ -195,7 +195,7 @@ export default function SellersPage() {
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Not all real estate agents can deliver the same results. When you choose a 
               agent, you're choosing world-class marketing, 
-              a global network of buyers, and the most trusted name in real estate.
+              a global network of buyers, and a No HOA Las Vegas specialist.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
               {sellingBenefits.map((benefit) => {
@@ -335,7 +335,7 @@ export default function SellersPage() {
               What's Included When You List with BHHS
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              When you list with Dr. Jan Duffy at Berkshire Hathaway HomeServices, you receive 
+              When you list with Dr. Jan Duffy at No HOA Las Vegas Homes, you receive 
               comprehensive marketing and support services designed to maximize your home's 
               exposure and sale price.
             </p>
@@ -396,7 +396,7 @@ export default function SellersPage() {
                   a: "Dr. Jan provides a personalized preparation checklist for every listing. Generally, decluttering, minor repairs, fresh paint, and professional staging consultation yield the highest ROI. She'll walk through your home and identify exactly what improvements will generate the best return.",
                 },
                 {
-                  q: "How does Berkshire Hathaway market my home?",
+                  q: "How does No HOA Las Vegas market my home?",
                   a: "Your home gets professional photography, virtual tours, drone video (when appropriate), MLS syndication to 100+ websites, global network exposure, social media promotion, and targeted digital advertising. It's the most comprehensive marketing available in Las Vegas real estate.",
                 },
                 {
@@ -425,7 +425,7 @@ export default function SellersPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Sell Your Las Vegas Home?</h2>
             <p className="text-xl text-slate-300 mb-8">
               Schedule a free listing consultation with Dr. Jan Duffy and discover what your home
-              could sell for with Berkshire Hathaway HomeServices. No obligation, no pressure—just 
+              could sell for with No HOA Las Vegas Homes. No obligation, no pressure—just 
               honest advice and expert analysis.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

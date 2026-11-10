@@ -34,7 +34,7 @@ async function getProperty(id: string) {
     name: "Modern Luxury Home",
     location: "Summerlin, Las Vegas, NV",
     price: "$850,000",
-    image: "/Image/hero_bg_1.jpg",
+    image: "https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/searchforhomesvegas/property-no-hoa-luxury-custom/public",
     bedrooms: 4,
     bathrooms: 3,
     squareFeet: 3200,

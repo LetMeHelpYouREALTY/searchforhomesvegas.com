@@ -89,7 +89,7 @@ export default function CentennialHillsPage() {
             </h1>
             <p className="text-xl text-slate-600">
               Northwest Las Vegas living near parks and trails. Find your Centennial Hills home with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> and Dr. Jan Duffy.
             </p>
           </div>
 
@@ -132,7 +132,7 @@ export default function CentennialHillsPage() {
                 living. While newer communities like Skye Canyon attract attention, Centennial Hills
                 offers something they can't: older neighborhoods with proven schools, established
                 landscaping, and a genuine sense of community built over nearly two decades.
-                <strong> Berkshire Hathaway HomeServices</strong> helps families discover why
+                <strong> No HOA Las Vegas Homes</strong> helps families discover why
                 Centennial Hills remains one of the valley's most desirable addresses.
               </p>
               <p>
@@ -296,7 +296,7 @@ export default function CentennialHillsPage() {
                 smaller homes to over $900,000 for larger properties with premium lots and views.
               </p>
               <p>
-                Working with <strong>Berkshire Hathaway HomeServices</strong> in Centennial Hills means
+                Working with <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> in Centennial Hills means
                 partnering with agents who understand the community's evolution and can identify
                 properties that represent genuine value. Dr. Jan Duffy helps buyers look beyond
                 surface features to evaluate factors that matter long-term: construction quality,

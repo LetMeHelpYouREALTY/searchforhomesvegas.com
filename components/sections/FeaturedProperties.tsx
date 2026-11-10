@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Bed, Bath, Square, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { siteImage } from "@/lib/cloudflare-images";
 
 interface Property {
   id: number;
@@ -11,6 +12,7 @@ interface Property {
   location: string;
   price: string;
   image: string;
+  imageAlt: string;
   bedrooms: number;
   bathrooms: number;
   squareFeet: number;
@@ -21,9 +23,10 @@ const PropertyCard = ({ property }: { property: Property }) => (
     <div className="relative h-48 md:h-64">
       <Image
         src={property.image}
-        alt={property.name}
+        alt={property.imageAlt}
         fill
         className="object-cover"
+        sizes="(max-width: 768px) 100vw, 33vw"
       />
       <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-md text-sm font-semibold">
         {property.price}
@@ -43,7 +46,9 @@ const PropertyCard = ({ property }: { property: Property }) => (
         </div>
         <div className="flex items-center gap-1">
           <Square className="h-4 w-4 text-blue-600" />
-          <span className="text-sm">{property.squareFeet.toLocaleString()} sq ft</span>
+          <span className="text-sm">
+            {property.squareFeet.toLocaleString()} sq ft
+          </span>
         </div>
       </div>
       <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
@@ -58,30 +63,36 @@ const PropertyCard = ({ property }: { property: Property }) => (
 const properties: Property[] = [
   {
     id: 1,
-    name: "Modern Luxury Home",
-    location: "Summerlin, Las Vegas, NV",
-    price: "$850,000",
-    image: "/Image/hero_bg_1.jpg",
+    name: "No HOA Luxury Custom Estate",
+    location: "Northwest Las Vegas, NV",
+    price: "$850,000+",
+    image: siteImage("propertyLuxuryCustom", "card"),
+    imageAlt:
+      "Modern luxury custom home on a private non-HOA Las Vegas desert lot",
     bedrooms: 4,
     bathrooms: 3,
     squareFeet: 3200,
   },
   {
     id: 2,
-    name: "Spacious Family Home",
+    name: "Spacious Non-HOA Home",
     location: "Henderson, NV",
-    price: "$625,000",
-    image: "/Image/hero_bg_2.jpg",
+    price: "$625,000+",
+    image: siteImage("propertyHenderson", "card"),
+    imageAlt:
+      "Spacious Henderson single-family home on an open lot without HOA rules",
     bedrooms: 3,
     bathrooms: 2,
     squareFeet: 2400,
   },
   {
     id: 3,
-    name: "Elegant Estate",
-    location: "Green Valley, Henderson, NV",
-    price: "$1,200,000",
-    image: "/Image/hero_bg_3.jpg",
+    name: "Elegant Non-HOA Estate",
+    location: "Green Valley / Henderson, NV",
+    price: "$1,200,000+",
+    image: siteImage("propertyGreenValley", "card"),
+    imageAlt:
+      "Elegant estate near Green Valley Henderson with mountain views — no HOA",
     bedrooms: 5,
     bathrooms: 4,
     squareFeet: 4500,
@@ -95,17 +106,13 @@ export default function FeaturedProperties() {
         <div className="flex flex-col md:flex-row justify-between items-center mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-              Featured Properties
+              Featured No HOA Properties
             </h2>
             <p className="text-slate-600 text-lg">
-              Discover exceptional homes in Las Vegas and Henderson
+              Luxury and acreage-style homes for No HOA Las Vegas home buyers
             </p>
           </div>
-          <Button asChild variant="outline" className="mt-4 md:mt-0">
-            <a href="http://drjanduffy.realscout.com/" target="_blank" rel="noopener noreferrer">View All Properties</a>
-          </Button>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {properties.map((property) => (
             <PropertyCard key={property.id} property={property} />

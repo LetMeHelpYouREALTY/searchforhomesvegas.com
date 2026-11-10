@@ -699,7 +699,7 @@ export default function FiftyFiveCommunitiesPage() {
                 typical purchase. You need to understand HOA rules, age
                 verification processes, and how the community fits your
                 lifestyle. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent
+                <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent
                 specializing in active adult communities, I guide clients through
                 every step—from touring amenities to reviewing HOA documents. Many
                 clients are relocating from California, and they rely on my local
@@ -825,7 +825,7 @@ export default function FiftyFiveCommunitiesPage() {
                 <div>
                   <h3 className="font-bold text-slate-900 mb-1">Trusted Brand</h3>
                   <p className="text-slate-600 text-sm">
-                    The Berkshire Hathaway name represents trust and
+                    The No HOA Las Vegas name represents trust and
                     integrity—values that matter when making one of life's biggest
                     decisions.
                   </p>

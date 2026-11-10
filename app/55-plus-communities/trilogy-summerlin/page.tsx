@@ -27,7 +27,7 @@ export const metadata: Metadata = withPageCanonical("/55-plus-communities/trilog
     "luxury 55+ community Las Vegas",
     "resort style 55+ Las Vegas",
     "Shea Homes Trilogy",
-    "Berkshire Hathaway Trilogy Summerlin",
+    "No HOA Las Vegas Trilogy Summerlin",
   ],
   openGraph: {
     title: "Trilogy at Summerlin - Luxury Resort 55+ Living",
@@ -382,7 +382,7 @@ export default function TrilogySummerlinPage() {
                 community—they want a lifestyle. The on-site restaurant, spa, and
                 contemporary homes create an experience you simply can't find
                 elsewhere. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent serving
+                <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent serving
                 luxury 55+ buyers, I recommend Trilogy to those who appreciate
                 quality and won't settle for ordinary."
               </blockquote>

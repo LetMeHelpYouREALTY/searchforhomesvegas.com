@@ -15,7 +15,7 @@ export const metadata: Metadata = withPageCanonical("/market-report", {
     "Las Vegas home prices 2026",
     "Henderson real estate market",
     "Nevada housing market",
-    "Berkshire Hathaway market report",
+    "No HOA Las Vegas market report",
   ],
 });
 

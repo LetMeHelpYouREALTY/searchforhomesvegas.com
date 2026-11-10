@@ -24,14 +24,14 @@ import { withPageCanonical } from "@/lib/metadata";
 export const metadata: Metadata = withPageCanonical("/listings", {
   title: "Las Vegas Homes for Sale | MLS Property Search",
   description:
-    "Browse all Las Vegas and Henderson homes for sale with live MLS listings. Search by neighborhood, price, and features. Dr. Jan Duffy, Berkshire Hathaway HomeServices. Call (702) 500-1955.",
+    "Browse all Las Vegas and Henderson homes for sale with live MLS listings. Search by neighborhood, price, and features. Dr. Jan Duffy, No HOA Las Vegas Homes. Call (702) 500-1955.",
   keywords: [
     "Las Vegas homes for sale",
     "Henderson real estate",
     "MLS listings Las Vegas",
     "Summerlin homes",
     "houses for sale Las Vegas",
-    "Berkshire Hathaway listings",
+    "No HOA Las Vegas listings",
   ],
 });
 
@@ -129,7 +129,7 @@ export default function ListingsPage() {
             <p className="text-xl text-slate-600 mb-8">
               Search thousands of Las Vegas, Henderson, and Summerlin properties with live MLS 
               listings updated every 15 minutes. Find your dream home with expert guidance from 
-              Dr. Jan Duffy at <strong>Berkshire Hathaway HomeServices</strong>.
+              Dr. Jan Duffy at <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-500">
               <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Live MLS Data</span>
@@ -247,7 +247,7 @@ export default function ListingsPage() {
             <p className="text-slate-300 text-center max-w-3xl mx-auto mb-8">
               In today's competitive Las Vegas market, having expert representation can mean the 
               difference between winning your dream home and losing out. Dr. Jan Duffy brings 
-              the resources of Berkshire Hathaway HomeServices—the most trusted name in real estate—
+              the resources of No HOA Las Vegas Homes—a No HOA Las Vegas specialist—
               combined with deep local market knowledge from serving Las Vegas since 2008.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -330,7 +330,7 @@ export default function ListingsPage() {
               Buying a home is one of the most significant financial decisions you'll make. 
               Understanding the process helps reduce stress and ensures you're prepared at each 
               step. Here's what to expect when purchasing a home in Las Vegas with Dr. Jan Duffy 
-              and Berkshire Hathaway HomeServices.
+              and No HOA Las Vegas Homes.
             </p>
             <div className="space-y-6">
               <div className="flex items-start">
@@ -461,7 +461,7 @@ export default function ListingsPage() {
             </h2>
             <p className="text-xl text-blue-100 mb-8">
               Contact Dr. Jan Duffy for personalized guidance, off-market listings, and expert 
-              representation backed by Berkshire Hathaway HomeServices. Free buyer consultations 
+              representation backed by No HOA Las Vegas Homes. Free buyer consultations 
               available—the seller pays the commission.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

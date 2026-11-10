@@ -89,7 +89,7 @@ export default function NorthLasVegasPage() {
             </h1>
             <p className="text-xl text-slate-600">
               Affordable homeownership and investment opportunities. Find your North Las Vegas
-              home with <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
+              home with <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> and Dr. Jan Duffy.
             </p>
           </div>
 
@@ -298,7 +298,7 @@ export default function NorthLasVegasPage() {
                 find particularly strong opportunities here, with rental yields often exceeding 6%.
               </p>
               <p>
-                Working with <strong>Berkshire Hathaway HomeServices</strong> in North Las Vegas means
+                Working with <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> in North Las Vegas means
                 getting honest guidance about which neighborhoods offer the best value, which builders
                 have the best reputations, and which areas are poised for the strongest appreciation.
                 Dr. Jan Duffy won't push you toward a more expensive area when North Las Vegas fits

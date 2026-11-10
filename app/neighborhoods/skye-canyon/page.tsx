@@ -89,7 +89,7 @@ export default function SkyeCanyonPage() {
             </h1>
             <p className="text-xl text-slate-600">
               Northwest Las Vegas's fastest-growing community. Discover Skye Canyon with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> and Dr. Jan Duffy.
             </p>
           </div>
 
@@ -131,7 +131,7 @@ export default function SkyeCanyonPage() {
                 <strong>Skye Canyon</strong> represents the future of Las Vegas master-planned living.
                 This 1,700-acre community in northwest Las Vegas has quickly become one of the valley's
                 most sought-after addresses, consistently ranking among the nation's top-selling
-                master-planned communities. <strong>Berkshire Hathaway HomeServices</strong> is proud
+                master-planned communities. <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> is proud
                 to help buyers discover what makes Skye Canyon special.
               </p>
               <p>
@@ -297,7 +297,7 @@ export default function SkyeCanyonPage() {
                 from $450,000 to $800,000.
               </p>
               <p>
-                Choosing <strong>Berkshire Hathaway HomeServices</strong> for your Skye Canyon purchase
+                Choosing <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> for your Skye Canyon purchase
                 means working with agents who know which builders offer the best quality, which lots
                 have the best views, and which upgrades deliver the best value. Dr. Jan Duffy has
                 helped dozens of families find their Skye Canyon homes, and that experience translates

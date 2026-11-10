@@ -27,7 +27,7 @@ export const metadata: Metadata = withPageCanonical("/55-plus-communities/solera
     "guard-gated 55+ community Henderson",
     "Henderson 55+ communities",
     "intimate 55+ community Las Vegas",
-    "Berkshire Hathaway Solera Anthem",
+    "No HOA Las Vegas Solera Anthem",
   ],
   openGraph: {
     title: "Solera at Anthem - Intimate Guard-Gated 55+ in Henderson",
@@ -380,7 +380,7 @@ export default function SoleraAnthemPage() {
                 overwhelming. It's intimate, genuinely guard-gated, and everyone
                 is actually 55+. The community feels like a neighborhood, not a
                 small city. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent, I often
+                <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent, I often
                 recommend Solera to buyers who prioritize community connection
                 over endless amenities."
               </blockquote>

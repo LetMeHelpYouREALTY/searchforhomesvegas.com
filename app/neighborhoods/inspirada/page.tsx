@@ -89,7 +89,7 @@ export default function InspiradaPage() {
             </h1>
             <p className="text-xl text-slate-600">
               Resort-style living in Henderson. Discover Inspirada with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
+              <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> and Dr. Jan Duffy.
             </p>
           </div>
 
@@ -131,7 +131,7 @@ export default function InspiradaPage() {
                 <strong>Inspirada</strong> redefines what a master-planned community can be. This
                 2,000-acre development in Henderson consistently ranks among the nation's top-selling
                 communities, and for good reason: Inspirada delivers resort-style amenities that make
-                every day feel like a vacation. <strong>Berkshire Hathaway HomeServices</strong>
+                every day feel like a vacation. <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>
                 is proud to represent buyers and sellers in this exceptional community.
               </p>
               <p>
@@ -293,7 +293,7 @@ export default function InspiradaPage() {
                 established yards and upgraded features offer compelling alternatives.
               </p>
               <p>
-                Choosing <strong>Berkshire Hathaway HomeServices</strong> for your Inspirada purchase
+                Choosing <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> for your Inspirada purchase
                 means working with agents who understand the community's various neighborhoods, which
                 builders offer the best quality, and which lots provide the best value. Dr. Jan Duffy
                 has helped dozens of families find their Inspirada homes, and that experience

@@ -437,7 +437,7 @@ export default function DownsizingPage() {
                 raised families, and now deserve to enjoy life without maintaining a 4,000 square
                 foot house. I help them extract the equity they've earned, find a home that fits
                 their current lifestyle, and often pocket significant cash for travel, grandkids,
-                or just peace of mind. As a <strong>Berkshire Hathaway HomeServices</strong> agent,
+                or just peace of mind. As a <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong> agent,
                 I have the experience and compassion this transition requires."
               </blockquote>
               <cite className="text-slate-300 font-semibold">

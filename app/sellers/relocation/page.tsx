@@ -24,7 +24,7 @@ export const metadata: Metadata = withPageCanonical("/sellers/relocation", {
     "relocation sale Las Vegas",
     "job relocation Las Vegas",
     "sell home fast Las Vegas",
-    "Berkshire Hathaway relocation services",
+    "No HOA Las Vegas relocation services",
     "corporate relocation Nevada",
   ],
 });
@@ -486,7 +486,7 @@ export default function RelocationPage() {
                 "Relocation sales are complex because you're juggling two markets, two timelines,
                 and often a demanding new job. I take the Las Vegas side completely off your plate
                 so you can focus on your career. And because I'm part of{" "}
-                <strong>Berkshire Hathaway HomeServices</strong>, I can connect you with a trusted
+                <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>, I can connect you with a trusted
                 agent in your new city—someone who'll treat you like a VIP, not just a referral."
               </blockquote>
               <cite className="text-slate-300 font-semibold">

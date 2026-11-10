@@ -543,7 +543,7 @@ export default function NewConstructionPage() {
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "I've seen buyers leave $30,000 on the table because they didn't know what to ask
                 for. Builders expect negotiation—their sales managers have authority to approve
-                upgrades and credits. As your <strong>Berkshire Hathaway HomeServices</strong>
+                upgrades and credits. As your <strong>No HOA Las Vegas Homes by Dr Jan Duffy</strong>
                 agent, I know exactly which incentives are available, which upgrades add value, and
                 which builder promises are legally binding. This representation costs you nothing
                 and can save you tens of thousands."
